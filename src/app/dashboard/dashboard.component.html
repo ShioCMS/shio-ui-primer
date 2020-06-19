@@ -1,0 +1,24 @@
+<nav class="UnderlineNav" aria-label="Dashboard Tabs">
+    <div class="UnderlineNav-body">
+        <a href="#url" class="UnderlineNav-item selected">Sites</a>
+        <a href="#url" class="UnderlineNav-item">Tasks</a>
+    </div>
+</nav>
+<div style="margin-top: 20px;">
+    <div class="Subhead">
+        <div class="Subhead-heading">Select your site</div>
+        <div class="Subhead-actions"><a href="#url" class="btn mr-2" role="button">Import</a> <a href="#url"
+                class="btn btn-primary" role="button">New</a></div>
+        <div class="Subhead-description">Your site is the first thing that you need to start you project</div>
+    </div>
+    <div>
+        <input class="input-block form-control" type="text" placeholder="Find a site..." aria-label="Find a site" />
+    </div>
+</div>
+<div class="Box" style="margin-top: 20px;">
+    <ul>
+        <li *ngFor="let site of getSites()" class="Box-row">
+            <a [routerLink]="['../object-list', site.id]" routerLinkActive="active" > {{site.name}} </a>
+        </li>        
+    </ul>
+</div>

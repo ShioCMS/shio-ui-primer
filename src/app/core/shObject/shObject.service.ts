@@ -1,0 +1,59 @@
+/*
+ * Copyright (C) 2016-2020 the original author or authors. 
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { SiteData } from '../site/site.service';
+
+export interface BreadcrumbData  {
+    id: string;
+    name: string;
+}
+
+export interface ShFolderData  {
+    id: string;
+    date: Date;
+    name: string;
+    position: number;
+}
+
+export interface ShPostData  {
+    id: string;
+    date: Date;
+    title: string;
+    position: number;
+}
+
+export interface ShObjectData {
+    breadcrumb: BreadcrumbData[];
+    folderpath: string;
+    shFolders: ShFolderData[];
+    shPosts: ShPostData[];
+    shSite: SiteData;
+}
+
+@Injectable()
+export class ShObject {
+    constructor(private http: HttpClient) { }
+    query(): Observable<ShObjectData[]> {
+        return this.http.get<ShObjectData[]>(`http://localhost:2710/api/v2/object`);
+    }
+    get(id: string): Observable<ShObjectData> {
+        return this.http.get<ShObjectData>(`http://localhost:2710/api/v2/object/${id}/list`);
+    }
+}
