@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 import { Site } from './core/site/site.service';
 import { ShObject } from './core/shObject/shObject.service';
+import { PostComponent } from './post/post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { ShObject } from './core/shObject/shObject.service';
     ObjectListComponent,
     PostTypeListComponent,
     ApiPlaygroundComponent,
+    PostComponent,
     
   ],
   imports: [
