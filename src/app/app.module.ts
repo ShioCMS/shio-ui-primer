@@ -12,6 +12,7 @@ import { MomentModule } from 'angular2-moment';
 import { Site } from './core/site/site.service';
 import { ShObject } from './core/shObject/shObject.service';
 import { PostComponent } from './post/post.component';
+import { ShPost } from './core/shPost/shPost.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,7 @@ import { PostComponent } from './post/post.component';
     PostTypeListComponent,
     ApiPlaygroundComponent,
     PostComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,7 @@ import { PostComponent } from './post/post.component';
     MomentModule
   ],
   providers: [
-    Site, ShObject
+    Site, ShObject, ShPost
   ],
   bootstrap: [AppComponent]
 })

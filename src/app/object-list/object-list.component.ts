@@ -9,20 +9,17 @@ import { SiteData } from '../core/site/site.service';
   styleUrls: ['./object-list.component.scss']
 })
 export class ObjectListComponent implements OnInit, OnDestroy {
-  shObject: ShObject;
-  shObjectList: ShObjectData;
-  orderProp: string;
-  objectId: string;
+  private shObject: ShObject;
+  private shObjectList: ShObjectData;
   constructor(shObject: ShObject, private route: ActivatedRoute, private router: Router) {
     this.shObject = shObject;
-    this.orderProp = 'name';
     let id = this.route.snapshot.paramMap.get('id');
     this.shObject.get(id).subscribe(shObjectList => {
       this.shObjectList = shObjectList;
     });
-    this.router.routeReuseStrategy.shouldReuseRoute = function() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
-  };
+    };
   }
   getShObjectList(): ShObjectData {
 
@@ -31,9 +28,9 @@ export class ObjectListComponent implements OnInit, OnDestroy {
 
   getShFolders(): ShFolderData[] {
     if (this.shObjectList !== null && (typeof this.shObjectList !== undefined)) {
-      if (this.shObjectList.shFolders != null && (typeof this.shObjectList.shFolders !== undefined) && this.shObjectList.shFolders.length > 0){
+      if (this.shObjectList.shFolders != null && (typeof this.shObjectList.shFolders !== undefined) && this.shObjectList.shFolders.length > 0) {
         return this.shObjectList.shFolders;
-      }else
+      } else
         return [];
     }
     return [];
@@ -54,9 +51,9 @@ export class ObjectListComponent implements OnInit, OnDestroy {
     return this.shObjectList.breadcrumb;
   }
   ngOnInit() {
-    
+
   }
   ngOnDestroy(): void {
-  
+
   }
 }

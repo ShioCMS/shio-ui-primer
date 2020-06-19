@@ -18,36 +18,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SiteData } from '../site/site.service';
-import { ShPostData } from '../shPost/shPost.service';
 
-export interface BreadcrumbData  {
-    id: string;
-    name: string;
-}
 
-export interface ShFolderData  {
+export interface ShPostData  {
     id: string;
     date: Date;
-    name: string;
+    title: string;
     position: number;
 }
 
-export interface ShObjectData {
-    breadcrumb: BreadcrumbData[];
-    folderpath: string;
-    shFolders: ShFolderData[];
-    shPosts: ShPostData[];
-    shSite: SiteData;
+export interface ShPostXPData  {
+    allowPublish: boolean;
+    shPost: ShPostData;   
 }
 
 @Injectable()
-export class ShObject {
+export class ShPost {
     constructor(private http: HttpClient) { }
-    query(): Observable<ShObjectData[]> {
-        return this.http.get<ShObjectData[]>(`http://localhost:2710/api/v2/object`);
+    query(): Observable<ShPostXPData[]> {
+        return this.http.get<ShPostXPData[]>(`http://localhost:2710/api/v2/object`);
     }
-    get(id: string): Observable<ShObjectData> {
-        return this.http.get<ShObjectData>(`http://localhost:2710/api/v2/object/${id}/list`);
+    get(id: string): Observable<ShPostXPData> {
+        return this.http.get<ShPostXPData>(`http://localhost:2710/api/v2/post/xp/${id}`);
     }
 }

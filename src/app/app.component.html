@@ -1,6 +1,6 @@
 <div class="Header" >
   <div class="Header-item">
-    <a href="#" class="Header-link f4 d-flex flex-items-center ">
+    <a [routerLink]="['/dashboard']" routerLinkActive="active" class="Header-link f4 d-flex flex-items-center ">
       <svg height="32" class="mr-1" version="1.1" width="32" aria-hidden="true" viewBox="0 0 11200 11200"
         preserveAspectRatio="xMidYMid meet">
         <g id="layer101" fill="#fc644e" stroke="none">
@@ -24,8 +24,17 @@
       </svg>
     </a>
   </div>
-  <div class="Header-item  Header-item--full width-full">
-    <input type="search" class="form-control input-dark" style="width: 50%;" placeholder="Search for..." />
+  <div class="Header-item ">
+    <input type="search" class="form-control input-dark" placeholder="Search for..." />
+  </div>
+  <div class="Header-item">
+    <a [routerLink]="['/modeling']" routerLinkActive="active" class="Header-link">Modeling</a>
+  </div>
+  <div class="Header-item">
+    <a [routerLink]="['/playground']" routerLinkActive="active" class="Header-link">API Playground</a>
+  </div>
+  <div class="Header-item Header-item--full">
+    <a [routerLink]="['/media']" routerLinkActive="active" class="Header-link">Media</a>
   </div>
   <div class="Header-item ml-1">
     <a class="CircleBadge CircleBadge--small float-left" href="#small" style="width: 32px; height: 32px;"
@@ -34,28 +43,7 @@
     </a>
   </div>
 </div>
-<div class="clearfix" style="margin: 20px;">
-  <div class="d-table table-fixed width-full">
-    <div class="d-table-cell">
-      <nav class="SideNav border" style="max-width: 360px">
-        <a class="SideNav-item" [routerLink]="['/dashboard']" routerLinkActive="active" aria-current="page">
-          <span>Dashboard</span>
-        </a>
-        <a class="SideNav-item" [routerLink]="['../modeling']" routerLinkActive="active">
-          <span>Modeling</span>
-        </a>
-        <a class="SideNav-item" [routerLink]="['../playground']" routerLinkActive="active">
-          <span>API Playground</span>
-        </a>
-        <a class="SideNav-item" href="#url">
-          <span>Media</span>
-        </a>
-      </nav>
-    </div>
-    <div class="d-table-cell col-10">
-      <div style="margin-left:20px">       
+<div class="clearfix" style="margin: 10px 20px;">
         <router-outlet>
         </router-outlet>
-      </div>
-    </div>
-  </div>
+</div>
