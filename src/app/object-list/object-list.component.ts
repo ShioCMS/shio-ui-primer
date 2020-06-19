@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ShObjectData, ShObject, ShPostData, ShFolderData, BreadcrumbData } from '../core/shObject/shObject.service';
+import { ShObjectData, ShObject, ShFolderData, BreadcrumbData } from '../core/shObject/shObject.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SiteData } from '../core/site/site.service';
+import { ShPostData } from '../core/shPost/shPost.service';
 
 @Component({
   selector: 'app-object-list',

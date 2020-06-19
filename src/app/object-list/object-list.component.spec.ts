@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ObjectListComponent } from './object-list.component';
+import { ShObject } from '../core/shObject/shObject.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 describe('ObjectListComponent', () => {
   let component: ObjectListComponent;
@@ -8,9 +11,11 @@ describe('ObjectListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ObjectListComponent ]
+      declarations: [ObjectListComponent],
+      imports: [RouterModule.forRoot([]), HttpClientTestingModule],
+      providers: [ShObject]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

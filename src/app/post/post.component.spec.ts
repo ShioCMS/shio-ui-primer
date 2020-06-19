@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostComponent } from './post.component';
+import { ShPost } from '../core/shPost/shPost.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterModule } from '@angular/router';
 
 describe('PostComponent', () => {
   let component: PostComponent;
@@ -8,9 +11,11 @@ describe('PostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostComponent ]
+      declarations: [PostComponent],
+      imports: [RouterModule.forRoot([]), HttpClientTestingModule],
+      providers: [ShPost]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
