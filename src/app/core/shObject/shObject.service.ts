@@ -21,12 +21,14 @@ import { Observable } from 'rxjs';
 import { SiteData } from '../site/site.service';
 import { ShPostData } from '../shPost/shPost.service';
 
-export interface BreadcrumbData  {
+
+
+export interface BreadcrumbData {
     id: string;
     name: string;
 }
 
-export interface ShFolderData  {
+export interface ShFolderData {
     id: string;
     date: Date;
     name: string;
@@ -41,13 +43,22 @@ export interface ShObjectData {
     shSite: SiteData;
 }
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class ShObject {
-    constructor(private http: HttpClient) { }
+
+    private SERVER_URL = "http://localhost:2710";
+    constructor(private httpClient: HttpClient) { }
+
+    public fetchData() {
+        return this.httpClient.get(`${this.SERVER_URL}/products`);
+    }
+
     query(): Observable<ShObjectData[]> {
-        return this.http.get<ShObjectData[]>(`http://localhost:2710/api/v2/object`);
+        return this.httpClient.get<ShObjectData[]>(`${this.SERVER_URL}/api/v2/object`);
     }
     get(id: string): Observable<ShObjectData> {
-        return this.http.get<ShObjectData>(`http://localhost:2710/api/v2/object/${id}/list`);
+        return this.httpClient.get<ShObjectData>(`${this.SERVER_URL}/api/v2/object/${id}/list`);
     }
 }

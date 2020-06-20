@@ -1,113 +1,129 @@
-<div class="Subhead">
-    <div class="Subhead-heading">{{getShSite().name}}</div>
-    <div class="Subhead-actions">
-        <button class="btn btn-primary mr-2" type="button">View Site</button>
-        <button class="btn" type="button">Site Properties</button>
-    </div>
-    <div class="Subhead-description">{{getShSite().description}}</div>
-</div>
-<div class="clearfix" style="margin-top: 20px;">
-    <div class="float-left" style="display: inline-flex;">
-        <button class="btn mr-2" type="button">New Folder</button>
-    </div>
-    <div class="float-right" style="display: inline-flex;">
-        <div>
-            <details class="dropdown details-reset details-overlay d-inline-block mr-2">
-                <summary class="btn" aria-haspopup="true">
-                    Order
-                    <div class="dropdown-caret"></div>
-                </summary>
-
-                <ul class="dropdown-menu dropdown-menu-se">
-                    <li><a class="dropdown-item" href="#url">Name</a></li>
-                    <li><a class="dropdown-item" href="#url">Description</a></li>
-                    <li><a class="dropdown-item" href="#url">Date</a></li>
-                </ul>
-            </details>
+<div *ngIf="(getShObjectList() | async) as objectList; else loading">
+    <div class="Subhead">
+        <div class="Subhead-heading">{{objectList.shSite.name}}</div>
+        <div class="Subhead-actions">
+            <button class="btn btn-primary mr-2" type="button">View Site</button>
+            <button class="btn" type="button">Site Properties</button>
         </div>
-        <div>
-            <details class="dropdown details-reset details-overlay d-inline-block mr-2">
-                <summary class="btn" aria-haspopup="true">
-                    Select
-                    <div class="dropdown-caret"></div>
-                </summary>
-
-                <ul class="dropdown-menu dropdown-menu-se">
-                    <li><a class="dropdown-item" href="#url">Content</a></li>
-                    <li><a class="dropdown-item" href="#url">Folder</a></li>
-                    <li><a class="dropdown-item" href="#url">Everything</a></li>
-                    <li><a class="dropdown-item" href="#url">Inver Selection</a></li>
-                    <li><a class="dropdown-item" href="#url">Nothing</a></li>
-                </ul>
-            </details>
-        </div>
-        <div>
-            <details class="dropdown details-reset details-overlay d-inline-block mr-2">
-                <summary class="btn" aria-haspopup="true">
-                    Action in Batch
-                    <div class="dropdown-caret"></div>
-                </summary>
-
-                <ul class="dropdown-menu dropdown-menu-se">
-                    <li><a class="dropdown-item" href="#url">Copy</a></li>
-                    <li><a class="dropdown-item" href="#url">Move</a></li>
-                    <li><a class="dropdown-item" href="#url">Delete</a></li>
-                </ul>
-            </details>
-        </div>
-
-
-        <button class="btn btn-primary" type="button">Download Site</button>
+        <div class="Subhead-description">{{objectList.shSite.description}}</div>
     </div>
-</div>
+    <div class="clearfix" style="margin-top: 20px;">
+        <div class="float-left" style="display: inline-flex;">
+            <button class="btn mr-2" type="button">New Folder</button>
+        </div>
+        <div class="float-right" style="display: inline-flex;">
+            <div>
+                <details class="dropdown details-reset details-overlay d-inline-block mr-2">
+                    <summary class="btn" aria-haspopup="true">
+                        Order
+                        <div class="dropdown-caret"></div>
+                    </summary>
 
-<div style="margin-top: 20px;">
-    <div class="Box Box--blue">
-        <div class="Box-header d-flex flex-items-center">
-            <div class="Box-title overflow-hidden flex-auto">
-                <nav aria-label="Breadcrumb">
-                    <ol>
-                        <li class="breadcrumb-item" [attr.aria-current]="getBreadcrumb() == null ? 'page' : null"><a
-                                *ngIf="getBreadcrumb() != null"
-                                [routerLink]="['/object-list', getShSite().id]">{{getShSite().name}}
-                            </a>
-                            <span *ngIf="getBreadcrumb() == null">{{getShSite().name}}</span>
-                        </li>
-                        <li *ngFor="let breadcrumb of getBreadcrumb(); last as isLast" class="breadcrumb-item"
-                            [attr.aria-current]="isLast ? 'page' : null"><a
-                                [routerLink]="['/object-list', breadcrumb.id]"
-                                *ngIf="!isLast">{{breadcrumb.name}}</a><span *ngIf="isLast">{{breadcrumb.name}}</span>
-                        </li>
-                    </ol>
-                </nav>
+                    <ul class="dropdown-menu dropdown-menu-se">
+                        <li><a class="dropdown-item" href="#url">Name</a></li>
+                        <li><a class="dropdown-item" href="#url">Description</a></li>
+                        <li><a class="dropdown-item" href="#url">Date</a></li>
+                    </ul>
+                </details>
             </div>
-            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"></path></svg>
-            <span class="mr-4"> 10 commits</span>
-            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
-            <span class="mr-2"> 1 contributor</span>
+            <div>
+                <details class="dropdown details-reset details-overlay d-inline-block mr-2">
+                    <summary class="btn" aria-haspopup="true">
+                        Select
+                        <div class="dropdown-caret"></div>
+                    </summary>
+
+                    <ul class="dropdown-menu dropdown-menu-se">
+                        <li><a class="dropdown-item" href="#url">Content</a></li>
+                        <li><a class="dropdown-item" href="#url">Folder</a></li>
+                        <li><a class="dropdown-item" href="#url">Everything</a></li>
+                        <li><a class="dropdown-item" href="#url">Inver Selection</a></li>
+                        <li><a class="dropdown-item" href="#url">Nothing</a></li>
+                    </ul>
+                </details>
+            </div>
+            <div>
+                <details class="dropdown details-reset details-overlay d-inline-block mr-2">
+                    <summary class="btn" aria-haspopup="true">
+                        Action in Batch
+                        <div class="dropdown-caret"></div>
+                    </summary>
+
+                    <ul class="dropdown-menu dropdown-menu-se">
+                        <li><a class="dropdown-item" href="#url">Copy</a></li>
+                        <li><a class="dropdown-item" href="#url">Move</a></li>
+                        <li><a class="dropdown-item" href="#url">Delete</a></li>
+                    </ul>
+                </details>
+            </div>
+
+
+            <button class="btn btn-primary" type="button">Download Site</button>
         </div>
-        <ul>
-            <li *ngFor="let shFolder of getShFolders()" class="Box-row">
-                <a [routerLink]="['/object-list', shFolder.id]" routerLinkActive="active" style="display: inline-flex;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                        style="margin-right: 10px;">
-                        <path fill-rule="evenodd"
-                            d="M3.75 4.5a.25.25 0 00-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 00.25-.25V7.687a.25.25 0 00-.25-.25h-8.471a1.75 1.75 0 01-1.447-.765L8.928 4.61a.25.25 0 00-.208-.11H3.75zM2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063a.25.25 0 00.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0120.25 21H3.75A1.75 1.75 0 012 19.25V4.75z">
-                        </path>
-                    </svg>{{shFolder.name}}</a>
-            </li>
-            <li *ngFor="let shPost of getShPosts()" class="Box-row">
-                <a [routerLink]="['/post', shPost.id]" routerLinkActive="active" style="display: inline-flex;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
-                        style="margin-right: 10px;">
-                        <path
-                            d="M7.25 6a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5A.75.75 0 007.25 6zM12 6a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5A.75.75 0 0012 6zm4 .75a.75.75 0 011.5 0v9.5a.75.75 0 01-1.5 0v-9.5z">
-                        </path>
-                        <path fill-rule="evenodd"
-                            d="M3.75 2A1.75 1.75 0 002 3.75v16.5c0 .966.784 1.75 1.75 1.75h16.5A1.75 1.75 0 0022 20.25V3.75A1.75 1.75 0 0020.25 2H3.75zM3.5 3.75a.25.25 0 01.25-.25h16.5a.25.25 0 01.25.25v16.5a.25.25 0 01-.25.25H3.75a.25.25 0 01-.25-.25V3.75z">
-                        </path>
-                    </svg> {{shPost.title}}</a>
-            </li>
-        </ul>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <div class="Box Box--blue">
+            <div class="Box-header d-flex flex-items-center">
+                <div class="Box-title overflow-hidden flex-auto">
+                    <nav aria-label="Breadcrumb">
+                        <ol>
+                            <li class="breadcrumb-item"
+                                [attr.aria-current]="objectList.breadcrumb == null ? 'page' : null"><a
+                                    *ngIf="objectList.breadcrumb != null"
+                                    [routerLink]="['/object-list', objectList.shSite.id]">{{objectList.shSite.name}}
+                                </a>
+                                <span *ngIf="objectList.breadcrumb == null">{{objectList.shSite.name}}</span>
+                            </li>
+                            <li *ngFor="let breadcrumb of objectList.breadcrumb; last as isLast" class="breadcrumb-item"
+                                [attr.aria-current]="isLast ? 'page' : null"><a
+                                    [routerLink]="['/object-list', breadcrumb.id]"
+                                    *ngIf="!isLast">{{breadcrumb.name}}</a><span
+                                    *ngIf="isLast">{{breadcrumb.name}}</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd"
+                        d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z">
+                    </path>
+                </svg>
+                <span class="mr-4"> 10 commits</span>
+                <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd"
+                        d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z">
+                    </path>
+                </svg>
+                <span class="mr-2"> 1 contributor</span>
+            </div>
+            <ul>
+                <li *ngFor="let shFolder of objectList.shFolders" class="Box-row">
+                    <a [routerLink]="['/object-list', shFolder.id]" routerLinkActive="active"
+                        style="display: inline-flex;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            style="margin-right: 10px;">
+                            <path fill-rule="evenodd"
+                                d="M3.75 4.5a.25.25 0 00-.25.25v14.5c0 .138.112.25.25.25h16.5a.25.25 0 00.25-.25V7.687a.25.25 0 00-.25-.25h-8.471a1.75 1.75 0 01-1.447-.765L8.928 4.61a.25.25 0 00-.208-.11H3.75zM2 4.75C2 3.784 2.784 3 3.75 3h4.971c.58 0 1.12.286 1.447.765l1.404 2.063a.25.25 0 00.207.11h8.471c.966 0 1.75.783 1.75 1.75V19.25A1.75 1.75 0 0120.25 21H3.75A1.75 1.75 0 012 19.25V4.75z">
+                            </path>
+                        </svg>{{shFolder.name}}</a>
+                </li>
+                <li *ngFor="let shPost of objectList.shPosts" class="Box-row">
+                    <a [routerLink]="['/post', shPost.id]" routerLinkActive="active" style="display: inline-flex;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"
+                            style="margin-right: 10px;">
+                            <path
+                                d="M7.25 6a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5A.75.75 0 007.25 6zM12 6a.75.75 0 00-.75.75v4.5a.75.75 0 001.5 0v-4.5A.75.75 0 0012 6zm4 .75a.75.75 0 011.5 0v9.5a.75.75 0 01-1.5 0v-9.5z">
+                            </path>
+                            <path fill-rule="evenodd"
+                                d="M3.75 2A1.75 1.75 0 002 3.75v16.5c0 .966.784 1.75 1.75 1.75h16.5A1.75 1.75 0 0022 20.25V3.75A1.75 1.75 0 0020.25 2H3.75zM3.5 3.75a.25.25 0 01.25-.25h16.5a.25.25 0 01.25.25v16.5a.25.25 0 01-.25.25H3.75a.25.25 0 01-.25-.25V3.75z">
+                            </path>
+                        </svg> {{shPost.title}}</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
+<ng-template #loading>
+    Loading...
+</ng-template>

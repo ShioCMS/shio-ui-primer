@@ -3,6 +3,7 @@ import { ShObjectData, ShObject, ShFolderData, BreadcrumbData } from '../core/sh
 import { ActivatedRoute, Router } from '@angular/router';
 import { SiteData } from '../core/site/site.service';
 import { ShPostData } from '../core/shPost/shPost.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-object-list',
@@ -11,45 +12,18 @@ import { ShPostData } from '../core/shPost/shPost.service';
 })
 export class ObjectListComponent implements OnInit, OnDestroy {
   private shObject: ShObject;
-  private shObjectList: ShObjectData;
+  private shObjectList: Observable<ShObjectData>;
   constructor(shObject: ShObject, private route: ActivatedRoute, private router: Router) {
     this.shObject = shObject;
     let id = this.route.snapshot.paramMap.get('id');
-    this.shObject.get(id).subscribe(shObjectList => {
-      this.shObjectList = shObjectList;
-    });
+    this.shObjectList = this.shObject.get(id);
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
   }
-  getShObjectList(): ShObjectData {
+  getShObjectList(): Observable<ShObjectData> {
 
     return this.shObjectList;
-  }
-
-  getShFolders(): ShFolderData[] {
-    if (this.shObjectList !== null && (typeof this.shObjectList !== undefined)) {
-      if (this.shObjectList.shFolders != null && (typeof this.shObjectList.shFolders !== undefined) && this.shObjectList.shFolders.length > 0) {
-        return this.shObjectList.shFolders;
-      } else
-        return [];
-    }
-    return [];
-  }
-
-  getShPosts(): ShPostData[] {
-    if (this.shObjectList !== null && (typeof this.shObjectList !== undefined) && this.shObjectList.shPosts !== null && (typeof this.shObjectList.shPosts !== undefined) && this.shObjectList.shPosts.length > 0)
-      return this.shObjectList.shPosts;
-    else
-      return [];
-  }
-
-  getShSite(): SiteData {
-    return this.shObjectList.shSite;
-  }
-
-  getBreadcrumb(): BreadcrumbData[] {
-    return this.shObjectList.breadcrumb;
   }
   ngOnInit() {
 
