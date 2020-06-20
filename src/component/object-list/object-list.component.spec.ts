@@ -1,25 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
-import { Site } from '../core/site/site.service';
+import { ObjectListComponent } from './object-list.component';;
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterModule } from '@angular/router';
+import { ShObjectService } from 'src/service/object/object.service';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('ObjectListComponent', () => {
+  let component: ObjectListComponent;
+  let fixture: ComponentFixture<ObjectListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DashboardComponent],
+      declarations: [ObjectListComponent],
       imports: [RouterModule.forRoot([]), HttpClientTestingModule],
-      providers: [Site]
+      providers: [ShObjectService]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(ObjectListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

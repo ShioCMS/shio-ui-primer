@@ -18,21 +18,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ShPostXPData } from 'src/data/post/postxp.data';
+import { BreadcrumbData } from 'src/data/folder/breadcrumb.data';
+import { environment } from 'src/environments/environment';
 
-export interface SiteData {
-    id: string;
-    name: string;
-    description: string;
-    date: Date;
-}
+@Injectable({
+    providedIn: 'root'
+})
+export class ShPostService {
 
-@Injectable()
-export class Site {
-    constructor(private http: HttpClient) { }
-    query(): Observable<SiteData[]> {
-        return this.http.get<SiteData[]>(`http://localhost:2710/api/v2/site`);
+    constructor(private httpClient: HttpClient) { }
+
+    get(id: string): Observable<ShPostXPData> {
+        return this.httpClient.get<ShPostXPData>(`${environment.apiUrl}/api/v2/post/xp/${id}`);
     }
-    get(id: string): Observable<SiteData> {
-        return this.http.get<SiteData>(`http://localhost:2710/api/v2/site/${id}`);
+    getBreadcrumb(id: string): Observable<BreadcrumbData> {
+        return this.httpClient.get<BreadcrumbData>(`${environment.apiUrl}/api/v2/folder/${id}/path`)
     }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SiteData, Site } from '../core/site/site.service';
-
+import { ShSiteService } from 'src/service/site/site.service';
+import { ShSiteData } from 'src/data/site/site.data';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,16 +8,16 @@ import { SiteData, Site } from '../core/site/site.service';
 })
 
 export class DashboardComponent implements OnInit {
-  sites: SiteData[];
+  sites: ShSiteData[];
   orderProp: string;
 
-  constructor(site: Site) {
+  constructor(site: ShSiteService) {
     site.query().subscribe(sites => {
       this.sites = sites;
     });
     this.orderProp = 'name';
   }
-  getSites(): SiteData[] {
+  getSites(): ShSiteData[] {
     return this.sites;
   }
 

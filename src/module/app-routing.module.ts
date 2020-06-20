@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ObjectListComponent } from './object-list/object-list.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { PostTypeListComponent } from './post-type-list/post-type-list.component';
-import { ApiPlaygroundComponent } from './api-playground/api-playground.component';
-import { PostComponent } from './post/post.component';
+import { ObjectListComponent } from 'src/component/object-list/object-list.component';
+import { DashboardComponent } from 'src/component/dashboard/dashboard.component';
+import { PostComponent } from 'src/component/post/post.component';
+import { PostTypeListComponent } from 'src/component/post-type-list/post-type-list.component';
+import { ApiPlaygroundComponent } from 'src/component/api-playground/api-playground.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -18,37 +18,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { BreadcrumbData } from '../shObject/shObject.service';
+import { ShSiteData } from 'src/data/site/site.data';
+import { environment } from 'src/environments/environment';
 
-
-export interface ShPostData {
-    id: string;
-    date: Date;
-    title: string;
-    position: number;
-}
-
-export interface ShPostXPData {
-    allowPublish: boolean;
-    shPost: ShPostData;
-}
-
-@Injectable({
-    providedIn: 'root'
-})
-export class ShPost {
-
-    private SERVER_URL = "http://localhost:2710";
-    constructor(private httpClient: HttpClient) { }
-
-    public fetchData() {
-        return this.httpClient.get(`${this.SERVER_URL}/products`);
+@Injectable()
+export class ShSiteService {
+    constructor(private http: HttpClient) { }
+    query(): Observable<ShSiteData[]> {
+        return this.http.get<ShSiteData[]>(`${environment.apiUrl}/api/v2/site`);
     }
-
-    get(id: string): Observable<ShPostXPData> {
-        return this.httpClient.get<ShPostXPData>(`${this.SERVER_URL}/api/v2/post/xp/${id}`);
-    }
-    getBreadcrumb(id: string): Observable<BreadcrumbData> {
-        return this.httpClient.get<BreadcrumbData>(`${this.SERVER_URL}/api/v2/folder/${id}/path`)
+    get(id: string): Observable<ShSiteData> {
+        return this.http.get<ShSiteData>(`${environment.apiUrl}/api/v2/site/${id}`);
     }
 }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ShPost, ShPostData, ShPostXPData } from '../core/shPost/shPost.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { BreadcrumbData } from '../core/shObject/shObject.service';
+import { BreadcrumbData } from 'src/data/folder/breadcrumb.data';
+import { ShPostService } from 'src/service/post/post.service';
+import { ShPostXPData } from 'src/data/post/postxp.data';
 
 @Component({
   selector: 'app-post',
@@ -11,10 +12,10 @@ import { BreadcrumbData } from '../core/shObject/shObject.service';
 })
 export class PostComponent implements OnInit {
   private breacrumbData: Observable<BreadcrumbData>;
-  private shPost: ShPost;
+  private shPost: ShPostService;
   private shPostData: Observable<ShPostXPData>
   private id: string;
-  constructor(shPost: ShPost, private route: ActivatedRoute, private router: Router) {
+  constructor(shPost: ShPostService, private route: ActivatedRoute, private router: Router) {
     this.shPost = shPost;
     this.id = this.route.snapshot.paramMap.get('id');
     this.shPostData = this.shPost.get(this.id);
