@@ -5,11 +5,11 @@ import { ShObjectService } from 'src/app/service/object/object.service';
 import { ShObjectData } from 'src/app/data/object/object.data';
 
 @Component({
-  selector: 'app-object-list',
-  templateUrl: './object-list.component.html',
-  styleUrls: ['./object-list.component.scss']
+  selector: 'shio-object-list',
+  templateUrl: './shio-object-list.component.html',
+  styleUrls: ['./shio-object-list.component.scss']
 })
-export class ObjectListComponent implements OnInit, OnDestroy {
+export class ShioObjectListComponent implements OnInit, OnDestroy {
   private shObject: ShObjectService;
   private shObjectList: Observable<ShObjectData>;
   constructor(shObject: ShObjectService, private route: ActivatedRoute, private router: Router) {

@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from './dashboard.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterModule } from '@angular/router';
-import { ShSiteService } from 'src/service/site/site.service';
+import { ShSiteService } from 'src/app/service/site/site.service';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;

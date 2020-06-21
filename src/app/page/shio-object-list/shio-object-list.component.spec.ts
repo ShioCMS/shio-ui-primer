@@ -1,17 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ObjectListComponent } from './object-list.component';;
+import { ShioObjectListComponent } from './shio-object-list.component';;
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterModule } from '@angular/router';
-import { ShObjectService } from 'src/service/object/object.service';
+import { ShObjectService } from 'src/app/service/object/object.service';
 
-describe('ObjectListComponent', () => {
-  let component: ObjectListComponent;
-  let fixture: ComponentFixture<ObjectListComponent>;
+
+describe('ShioObjectListComponent', () => {
+  let component: ShioObjectListComponent;
+  let fixture: ComponentFixture<ShioObjectListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ObjectListComponent],
+      declarations: [ShioObjectListComponent],
       imports: [RouterModule.forRoot([]), HttpClientTestingModule],
       providers: [ShObjectService]
     })
@@ -19,7 +20,7 @@ describe('ObjectListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ObjectListComponent);
+    fixture = TestBed.createComponent(ShioObjectListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

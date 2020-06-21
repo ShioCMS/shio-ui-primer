@@ -2,14 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './component/app/app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { ObjectListComponent } from './component/object-list/object-list.component';
-import { PostTypeListComponent } from './component/post-type-list/post-type-list.component';
-import { ApiPlaygroundComponent } from './component/api-playground/api-playground.component';
-import { PostComponent } from './component/post/post.component';
 import { ShSiteService } from './service/site/site.service';
 import { ShObjectService } from './service/object/object.service';
 import { ShPostService } from './service/post/post.service';
@@ -27,12 +21,22 @@ import { OcticonsHistoryComponent } from './component/octicons/history/octicons-
 import { OcticonsEyeComponent } from './component/octicons/eye/octicons-eye.component';
 import { OcticonsDownloadComponent } from './component/octicons/download/octicons-download.component';
 import { OcticonsCodeComponent } from './component/octicons/code/octicons-code.component';
+import { ShioRepositoryListComponent } from './component/shio-repository-list/shio-repository-list.component';
+import { ShioPostTypeReportComponent } from './component/shio-post-type-report/shio-post-type-report.component';
+import { ShioRepositoryAboutComponent } from './component/shio-repository-about/shio-repository-about.component';
+import { ShioBoxListComponent } from './component/shio-box-list/shio-box-list.component';
+import { ShioObjectListComponent } from './page/shio-object-list/shio-object-list.component';
+import { AppComponent } from './page/app/app.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
+import { PostTypeListComponent } from './page/post-type-list/post-type-list.component';
+import { ApiPlaygroundComponent } from './page/api-playground/api-playground.component';
+import { PostComponent } from './page/post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ObjectListComponent,
+    ShioObjectListComponent,
     PostTypeListComponent,
     ApiPlaygroundComponent,
     PostComponent,
@@ -50,6 +54,10 @@ import { OcticonsCodeComponent } from './component/octicons/code/octicons-code.c
     OcticonsHistoryComponent,
     OcticonsEyeComponent,
     OcticonsDownloadComponent,
+    ShioBoxListComponent,
+    ShioRepositoryAboutComponent,
+    ShioPostTypeReportComponent,
+    ShioRepositoryListComponent,
 
   ],
   imports: [
