@@ -3,4 +3,5 @@ export interface ShSiteData {
     name: string;
     description: string;
     date: Date;
+    url: string;
 }
