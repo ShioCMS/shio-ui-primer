@@ -9,11 +9,11 @@ import { LoginComponent } from './page/login';
 import { AuthGuard } from './_helpers';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'object-list/:id', component: ShioObjectListComponent },
-  { path: 'post/:id', component: PostComponent },
-  { path: 'modeling', component: PostTypeListComponent },
-  { path: 'playground', component: ApiPlaygroundComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'object-list/:id', component: ShioObjectListComponent, canActivate: [AuthGuard] },
+  { path: 'post/:id', component: PostComponent, canActivate: [AuthGuard] },
+  { path: 'modeling', component: PostTypeListComponent, canActivate: [AuthGuard] },
+  { path: 'playground', component: ApiPlaygroundComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent }
 ];

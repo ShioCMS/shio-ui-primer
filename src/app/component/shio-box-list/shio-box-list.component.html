@@ -71,8 +71,8 @@
                                 </svg>
                             </button>
                         </header>
-                        <form class="SelectMenu-filter">
-                            <input class="SelectMenu-input form-control" type="text" placeholder="Find a Post Type..."
+                        <form [formGroup]="ptSelectForm" class="SelectMenu-filter">
+                            <input class="SelectMenu-input form-control" formControlName="filter" type="text" placeholder="Find a Post Type..."
                                 aria-label="Filter" />
                         </form>
                         <div class="SelectMenu-list">

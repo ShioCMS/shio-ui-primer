@@ -4,6 +4,9 @@ import { Observable } from 'rxjs';
 import { BreadcrumbData } from 'src/app/data/folder/breadcrumb.data';
 import { ShPostService } from 'src/app/service/post/post.service';
 import { ShPostXPData } from 'src/app/data/post/postxp.data';
+import { User } from '@app/_models';
+import { UserService } from '@app/_services';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-post',
@@ -15,7 +18,9 @@ export class PostComponent implements OnInit {
   private shPost: ShPostService;
   private shPostData: Observable<ShPostXPData>
   private id: string;
-  constructor(shPost: ShPostService, private route: ActivatedRoute, private router: Router) {
+  loading = false;
+  users: User[];
+  constructor(private userService: UserService, shPost: ShPostService, private route: ActivatedRoute, private router: Router) {
     this.shPost = shPost;
     this.id = this.route.snapshot.paramMap.get('id');
     this.shPostData = this.shPost.get(this.id);
@@ -31,6 +36,11 @@ export class PostComponent implements OnInit {
     return this.breacrumbData;
   }
   ngOnInit(): void {
+    this.loading = true;
+    this.userService.getAll().pipe(first()).subscribe(users => {
+      this.loading = false;
+      this.users = users;
+    });
   }
 
 }

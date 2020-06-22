@@ -3,6 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ShObjectService } from 'src/app/service/object/object.service';
 import { ShObjectData } from 'src/app/data/object/object.data';
+import { User } from '@app/_models';
+import { UserService } from '@app/_services';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'shio-object-list',
@@ -12,7 +15,9 @@ import { ShObjectData } from 'src/app/data/object/object.data';
 export class ShioObjectListComponent implements OnInit, OnDestroy {
   private shObject: ShObjectService;
   private shObjectList: Observable<ShObjectData>;
-  constructor(shObject: ShObjectService, private route: ActivatedRoute, private router: Router) {
+  loading = false;
+  users: User[];
+  constructor(private userService: UserService, shObject: ShObjectService, private route: ActivatedRoute, private router: Router) {
     this.shObject = shObject;
     let id = this.route.snapshot.paramMap.get('id');
     this.shObjectList = this.shObject.get(id);
@@ -25,7 +30,11 @@ export class ShioObjectListComponent implements OnInit, OnDestroy {
     return this.shObjectList;
   }
   ngOnInit() {
-
+    this.loading = true;
+    this.userService.getAll().pipe(first()).subscribe(users => {
+      this.loading = false;
+      this.users = users;
+    });
   }
   ngOnDestroy(): void {
 

@@ -36,7 +36,7 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { BasicAuthInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
 import { LoginComponent } from './page/login';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');
@@ -73,7 +73,8 @@ registerLocaleData(localePt, 'pt');
     AppRoutingModule,
     HttpClientModule,
     MomentModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule 
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
