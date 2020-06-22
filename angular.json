@@ -81,6 +81,13 @@
             "browserTarget": "shio-ui-primer:build"
           }
         },
+        "i18n": {
+          "sourceLocale": "en-US",          
+          "locales": {
+            "en": "src/locale/messages.en.xlf",
+            "pt": "src/locale/messages.fr.xlf"
+          }
+        },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

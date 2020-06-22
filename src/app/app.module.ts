@@ -31,7 +31,12 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { PostTypeListComponent } from './page/post-type-list/post-type-list.component';
 import { ApiPlaygroundComponent } from './page/api-playground/api-playground.component';
 import { PostComponent } from './page/post/post.component';
+import localeEn from '@angular/common/locales/en';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
+registerLocaleData(localeEn, 'en');
+registerLocaleData(localePt, 'pt');
 @NgModule({
   declarations: [
     AppComponent,

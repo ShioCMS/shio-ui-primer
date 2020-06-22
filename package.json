@@ -5,10 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "buildpt": "ng build --aot --i18n-file=src/locale/messages.pt.xlf --i18n-locale=pt --i18n-format=xlf",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sonar": "sonar-scanner"
+    "sonar": "sonar-scanner",
+    "i18n": "ng xi18n --output-path src/locale --i18n-locale en; ng xi18n --output-path src/locale --i18n-locale pt"
   },
   "private": true,
   "dependencies": {
@@ -17,6 +19,7 @@
     "@angular/compiler": "~9.1.9",
     "@angular/core": "~9.1.9",
     "@angular/forms": "~9.1.9",
+    "@angular/localize": "^9.1.11",
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
