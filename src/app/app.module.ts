@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MomentModule } from 'angular2-moment';
 import { ShSiteService } from './service/site/site.service';
 import { ShObjectService } from './service/object/object.service';
@@ -34,6 +34,9 @@ import { PostComponent } from './page/post/post.component';
 import localeEn from '@angular/common/locales/en';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { BasicAuthInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
+import { LoginComponent } from './page/login';
+import { ReactiveFormsModule } from '@angular/forms';
 
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');
@@ -63,16 +66,19 @@ registerLocaleData(localePt, 'pt');
     ShioRepositoryAboutComponent,
     ShioPostTypeReportComponent,
     ShioRepositoryListComponent,
-
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    ReactiveFormsModule
   ],
   providers: [
-    ShSiteService, ShObjectService, ShPostService
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    fakeBackendProvider, ShSiteService, ShObjectService, ShPostService
   ],
   bootstrap: [AppComponent]
 })

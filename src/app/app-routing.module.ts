@@ -5,6 +5,8 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { PostComponent } from './page/post/post.component';
 import { PostTypeListComponent } from './page/post-type-list/post-type-list.component';
 import { ApiPlaygroundComponent } from './page/api-playground/api-playground.component';
+import { LoginComponent } from './page/login';
+import { AuthGuard } from './_helpers';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -12,7 +14,8 @@ const routes: Routes = [
   { path: 'post/:id', component: PostComponent },
   { path: 'modeling', component: PostTypeListComponent },
   { path: 'playground', component: ApiPlaygroundComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],

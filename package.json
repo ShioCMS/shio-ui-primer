@@ -49,6 +49,7 @@
     "sonar-scanner": "^3.1.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "@angular/language-service": "~9.1.7"   
   }
 }
