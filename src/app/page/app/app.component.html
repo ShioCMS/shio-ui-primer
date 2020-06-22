@@ -26,15 +26,14 @@
   </div>
   <div class="Header-item Header-item--full">
     <input type="search" class="form-control input-dark" style="width: 50%;" placeholder="Search for..." />
-  </div>  
+  </div>
   <div class="Header-item">
-    <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-    <ul *ngIf="users">
-      <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
-    </ul>   
-    <a class="CircleBadge CircleBadge--small float-left" href="#" style="width: 32px; height: 32px;">
-      AO
-    </a>
+    <div *ngIf="users">
+      <a *ngFor="let user of users" class="CircleBadge CircleBadge--small float-left" href="#"
+        style="width: 32px; height: 32px;background-color: lightgray;">
+        {{user.firstName.charAt(0)}}{{user.lastName.charAt(0)}}
+      </a>
+    </div>
   </div>
 </div>
 <div class="clearfix">
