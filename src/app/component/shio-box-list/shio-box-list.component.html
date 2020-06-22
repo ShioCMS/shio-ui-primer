@@ -1,7 +1,7 @@
 <div class="clearfix">
     <div class="float-left" style="flex: 1 1 auto;width: 50%;">
-        <input class="form-control input-sm" style="width: 100%;" type="text" placeholder="Find a object in the current folder..."
-                        aria-label="Find a object in the current folder" />
+        <input class="form-control input-sm" style="width: 100%;" type="text"
+            placeholder="Find a object in the current folder..." aria-label="Find a object in the current folder" />
     </div>
     <div class="float-right" style="display: inline-flex;">
         <div>
@@ -48,7 +48,42 @@
                 </ul>
             </details>
         </div>
-        <button class="btn btn-primary btn-sm" type="button">New</button>
+        <div class="d-flex flex-justify-end position-relative">
+            <details class="details-reset details-overlay">
+                <summary class="btn btn-primary btn-sm " aria-haspopup="true">
+                    New
+                    <div class="dropdown-caret"></div>
+                </summary>
+                <div class="SelectMenu SelectMenu--hasFilter right-0">
+                    <div class="SelectMenu-modal">
+                        <header class="SelectMenu-header" style="padding: 5px;">
+                            <div class="SelectMenu-title">
+                                <a href class="btn btn-block mb-1"><octicons-note [size]="16" class="mr-1"></octicons-note>New Article</a>
+                                <a href class="btn btn-block mb-1"><octicons-file-directory [size]="16" class="mr-1"></octicons-file-directory> New Folder</a>
+                                <a href class="btn btn-block"><octicons-upload [size]="16" class="mr-1"></octicons-upload> Upload File</a>
+                            </div>
+                            <button class="SelectMenu-closeButton" type="button">
+                                <!-- <%= octicon "x" %> -->
+                                <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z" />
+                                </svg>
+                            </button>
+                        </header>
+                        <form class="SelectMenu-filter">
+                            <input class="SelectMenu-input form-control" type="text" placeholder="Find a Post Type..."
+                                aria-label="Filter" />
+                        </form>
+                        <div class="SelectMenu-list">
+                            <button class="SelectMenu-item" role="menuitem"><octicons-note [size]="16" class="mr-1"></octicons-note>Text</button>
+                            <button class="SelectMenu-item" role="menuitem"><octicons-note [size]="16" class="mr-1"></octicons-note>Article</button>
+                            <button class="SelectMenu-item" role="menuitem"><octicons-note [size]="16" class="mr-1"></octicons-note>Folder Index</button>
+                        </div>                       
+                    </div>
+                </div>
+            </details>
+        </div>
     </div>
 </div>
 <div style="margin-top: 20px;">

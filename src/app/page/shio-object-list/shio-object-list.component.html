@@ -1,5 +1,5 @@
 <div *ngIf="(getShObjectList() | async) as objectList; else loading">
-    <div class="clearfix">
+    <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" style="padding-top: 20px;">
         <div class="float-left d-flex flex-items-center">
             <octicons-repository size="16" class="mr-1" style="fill:gray"></octicons-repository>
             <span style="font-size: larger;font-weight: 600;">{{objectList.shSite.name}}</span>
@@ -14,7 +14,7 @@
             </button>
         </div>
     </div>
-    <nav class="UnderlineNav" aria-label="Dashboard Tabs">
+    <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Dashboard Tabs">
         <div class="UnderlineNav-body">
             <a href="#url" class="UnderlineNav-item selected">
                 <octicons-note size="16" class="mr-2"></octicons-note>Content
@@ -24,7 +24,7 @@
             </a>
         </div>
     </nav>
-    <div class="clearfix" style="margin-top: 30px;">
+    <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5" style="margin-top: 30px;">
         <div id="col-left" class="float-left" style="width: calc(100% - 300px);">
             <shio-box-list [objectList]="objectList"></shio-box-list>
         </div>
@@ -32,7 +32,7 @@
             <div class="border-bottom" style="padding-bottom: 20px;margin-bottom: 20px;">
                 <shio-repository-about [shSite]="objectList.shSite"></shio-repository-about>
             </div>
-            <shio-post-type-report></shio-post-type-report>
+            <shio-post-type-report [shSite]="objectList.shSite"></shio-post-type-report>
         </div>
     </div>
 </div>

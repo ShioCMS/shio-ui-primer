@@ -20,6 +20,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ShSiteData } from 'src/app/data/site/site.data';
+import { ShPostTypeReportData } from 'src/app/data/post/type/postTypeReport.data';
 
 @Injectable()
 export class ShSiteService {
@@ -29,5 +30,8 @@ export class ShSiteService {
     }
     get(id: string): Observable<ShSiteData> {
         return this.http.get<ShSiteData>(`${environment.apiUrl}/api/v2/site/${id}`);
+    }
+    countPostType(id:string): Observable<ShPostTypeReportData[]> {
+        return this.http.get<ShPostTypeReportData[]>(`${environment.apiUrl}/api/v2/site/${id}/type/count`);
     }
 }
