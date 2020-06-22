@@ -1,4 +1,5 @@
-# ShioUiPrimer
+# Shio UI Primer
+![shio-primer.png](https://shiocms.github.io/shio-ui-primer/img/shio-primer.png) 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
