@@ -34,9 +34,11 @@ import { PostComponent } from './page/post/post.component';
 import localeEn from '@angular/common/locales/en';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
-import { BasicAuthInterceptor, ErrorInterceptor, fakeBackendProvider } from './_helpers';
+import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
 import { LoginComponent } from './page/login';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ShioLogoComponent } from './component/shio-logo/shio-logo.component';
+import { ShioHeaderComponent } from './shio-header/shio-header.component';
 
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');
@@ -66,7 +68,9 @@ registerLocaleData(localePt, 'pt');
     ShioRepositoryAboutComponent,
     ShioPostTypeReportComponent,
     ShioRepositoryListComponent,
-    LoginComponent
+    LoginComponent,
+    ShioLogoComponent,
+    ShioHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +83,7 @@ registerLocaleData(localePt, 'pt');
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    fakeBackendProvider, ShSiteService, ShObjectService, ShPostService
+     ShSiteService, ShObjectService, ShPostService
   ],
   bootstrap: [AppComponent]
 })

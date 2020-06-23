@@ -3,7 +3,7 @@ import { ShSiteData } from 'src/app/data/site/site.data';
 import { ShSiteService } from 'src/app/service/site/site.service';
 import { User } from '@app/_models';
 import { UserService } from '@app/_services';
-import { first } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   sites: ShSiteData[];
   orderProp: string;
   loading = false;
-  users: User[];
+  user: Observable<User>;
   constructor(private userService: UserService, site: ShSiteService) {
     site.query().subscribe(sites => {
       this.sites = sites;
@@ -27,10 +27,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.loading = false;
-      this.users = users;
-    });
+    this.user = this.userService.getAll();
   }
 
 }

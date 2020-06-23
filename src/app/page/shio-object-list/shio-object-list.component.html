@@ -1,3 +1,4 @@
+<shio-header></shio-header>
 <div *ngIf="(getShObjectList() | async) as objectList; else loading">
     <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" style="padding-top: 20px;">
         <div class="float-left d-flex flex-items-center">
@@ -37,5 +38,5 @@
     </div>
 </div>
 <ng-template #loading>
-    Loading...
+    <span>Loading</span><span class="AnimatedEllipsis"></span>
 </ng-template>

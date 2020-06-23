@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '@app/_models';
 import { first } from 'rxjs/operators';
-import { UserService } from '@app/_services';
+import { UserService, AuthenticationService } from '@app/_services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +11,9 @@ import { UserService } from '@app/_services';
 })
 export class AppComponent implements OnInit {
   title = 'Shio CMS';
-  loading = false;
-  users: User[];
   
-  constructor(private userService: UserService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.loading = true;
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.loading = false;
-      this.users = users;
-    });
-  }
+  ngOnInit() { }
 
 }

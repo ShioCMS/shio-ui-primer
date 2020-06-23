@@ -5,4 +5,5 @@
     firstName: string;
     lastName: string;
     authdata?: string;
+    admin: boolean;
 }

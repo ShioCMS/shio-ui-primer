@@ -1,0 +1,32 @@
+<div class="Header">
+    <div class="Header-item">
+        <a [routerLink]="['/dashboard']" routerLinkActive="active" class="Header-link f4 d-flex flex-items-center ">
+            <shio-logo size="32"></shio-logo>
+        </a>
+    </div>
+    <div class="Header-item Header-item--full">
+        <input type="search" class="form-control input-dark" style="width: 50%;" placeholder="Search for..." />
+    </div>
+    <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+        <div>
+            <details *ngIf="(user | async) as userItem"
+                class="details-overlay details-reset js-feature-preview-indicator-container">
+                <summary class="Header-link" aria-haspopup="true">
+                    <div class="CircleBadge CircleBadge--small float-left" href="#"
+                        style="width: 32px; height: 32px;background-color: gray;margin-right: 7px;">
+                        {{userItem.firstName.charAt(0)}}{{userItem.lastName.charAt(0)}}
+                    </div>
+                    <div class="dropdown-caret" style="margin-top: 17px;padding-bottom: 10px;padding-top: 1px;"></div>
+                </summary>
+                <ul class="dropdown-menu dropdown-menu-sw">
+                    <li>
+                        <div class="dropdown-item">Signed in as <strong>{{userItem.username}}</strong></div>
+                    </li>
+                    <li class="dropdown-divider" role="separator"></li>
+                    <li><a class="dropdown-item" (click)="logout()" href>Sign out</a></li>
+                </ul>
+            </details>
+        </div>
+
+    </div>
+</div>
