@@ -38,7 +38,8 @@ import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
 import { LoginComponent } from './page/login';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ShioLogoComponent } from './component/shio-logo/shio-logo.component';
-import { ShioHeaderComponent } from './shio-header/shio-header.component';
+import { ShioHeaderComponent } from './component/shio-header/shio-header.component';
+import { ShioContentPageComponent } from './page/shio-content-page/shio-content-page.component';
 
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');
@@ -70,7 +71,8 @@ registerLocaleData(localePt, 'pt');
     ShioRepositoryListComponent,
     LoginComponent,
     ShioLogoComponent,
-    ShioHeaderComponent
+    ShioHeaderComponent,
+    ShioContentPageComponent
   ],
   imports: [
     BrowserModule,

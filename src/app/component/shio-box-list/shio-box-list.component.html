@@ -94,13 +94,13 @@
                     <ol>
                         <li class="breadcrumb-item" [attr.aria-current]="objectList.breadcrumb == null ? 'page' : null">
                             <a *ngIf="objectList.breadcrumb != null"
-                                [routerLink]="['/object-list', objectList.shSite.id]">{{objectList.shSite.name}}
+                                [routerLink]="['/content/object-list', objectList.shSite.id]">{{objectList.shSite.name}}
                             </a>
                             <span *ngIf="objectList.breadcrumb == null">{{objectList.shSite.name}}</span>
                         </li>
                         <li *ngFor="let breadcrumb of objectList.breadcrumb; last as isLast" class="breadcrumb-item"
                             [attr.aria-current]="isLast ? 'page' : null"><a
-                                [routerLink]="['/object-list', breadcrumb.id]"
+                                [routerLink]="['/content/object-list', breadcrumb.id]"
                                 *ngIf="!isLast">{{breadcrumb.name}}</a><span *ngIf="isLast">{{breadcrumb.name}}</span>
                         </li>
                     </ol>
@@ -120,7 +120,7 @@
             <li *ngFor="let shFolder of objectList.shFolders" class="Box-row">
                 <div class="d-flex flex-items-center">
                     <input type="checkbox" class="mr-2" />
-                    <a [routerLink]="['/object-list', shFolder.id]" routerLinkActive="active"
+                    <a [routerLink]="['/content/object-list', shFolder.id]" routerLinkActive="active"
                         class="d-flex flex-items-center">
                         <octicons-file-directory size="24" class="mr-1"></octicons-file-directory>
                         {{shFolder.name}}
@@ -193,7 +193,7 @@
             <li *ngFor="let shPost of objectList.shPosts" class="Box-row ">
                 <div class="d-flex flex-items-center">
                     <input type="checkbox" class="mr-2" />
-                    <a [routerLink]="['/post', shPost.id]" routerLinkActive="active" class="d-flex flex-items-center">
+                    <a [routerLink]="['/content/post', shPost.id]" routerLinkActive="active" class="d-flex flex-items-center">
                         <svg class="octicon mr-2" viewBox="0 0 24 24" width="24" height="24">
                             <path fill-rule="evenodd"
                                 d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0122.25 21H1.75A1.75 1.75 0 010 19.25V4.75zm1.75-.25a.25.25 0 00-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 00.25-.25V4.75a.25.25 0 00-.25-.25H1.75z">
