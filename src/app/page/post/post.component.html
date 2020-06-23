@@ -1,48 +1,17 @@
-<div *ngIf="(getShPost() | async) as post; else loading">
-    <div class="d-flex flex-items-center">
-        <div class="overflow-hidden flex-auto">
-            <div *ngIf="(getBreadcrumb() | async) as breadcrumb; else loading" style="margin: 10px 0px">
-                <nav aria-label="Breadcrumb">
-                    <ol>
-                        <li class="breadcrumb-item" [attr.aria-current]="breadcrumb.breadcrumb == null ? 'page' : null">
-                            <a *ngIf="breadcrumb.breadcrumb != null"
-                                [routerLink]="['/object-list', post.shPost.shSite.id]">{{post.shPost.shSite.name}}
-                            </a>
-                            <span *ngIf="breadcrumb.breadcrumb == null">{{post.shPost.shSite.name}}</span>
-                        </li>
-                        <li *ngFor="let breadcrumbItem of breadcrumb.breadcrumb;" class="breadcrumb-item"><a
-                                [routerLink]="['/object-list', breadcrumbItem.id]">{{breadcrumbItem.name}}</a>
-                        </li>
-                    </ol>
-                </nav>
+<div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 mt-4">
+    <div *ngIf="(getShPost() | async) as post; else loading">
+        <shio-post-tabs [shPost]="post.shPost"></shio-post-tabs>
+        <div style="margin: 10px 0px;">
+            <div *ngFor="let shPostAttr of post.shPost.shPostAttrs;" style="margin: 10px 0px;">
+                <div class="form-group">
+                    <div class="form-group-header">
+                        <label for="example-textarea">{{shPostAttr.shPostTypeAttr.label}}</label>
+                    </div>
+                    <div class="form-group-body">
+                        <textarea class="form-control" id="example-textarea">{{shPostAttr.strValue}}</textarea>
+                    </div>
+                </div>
             </div>
-        </div>
-        <button class="btn btn  mr-2" type="button">View Page</button>
-        <button class="btn  mr-4" type="button">Post Properties</button>
-        <button class="btn btn-primary" type="button">Save Draft</button>
-    </div>
-    <div class="Subhead">
-        <div class="Subhead-heading">{{post.shPost.title}}</div>
-        <div class="Subhead-actions" style="padding-top: 10px">
-
-        </div>
-        <div class="Subhead-description">Unpublished</div>
-    </div>
-    <nav class="UnderlineNav" aria-label="Pos Tabs">
-        <div class="UnderlineNav-body">
-            <a href="#url" class="UnderlineNav-item selected">{{post.shPost.shPostType.title}}</a>
-        </div>
-    </nav>
-    <div style="margin: 10px 0px;">
-        <div *ngFor="let shPostAttr of post.shPost.shPostAttrs;" style="margin: 10px 0px;">
-            <div class="form-group">
-                <div class="form-group-header">
-                  <label for="example-textarea">{{shPostAttr.shPostTypeAttr.label}}</label>
-                </div>
-                <div class="form-group-body">
-                  <textarea class="form-control" id="example-textarea">{{shPostAttr.strValue}}</textarea>
-                </div>
-              </div>            
         </div>
     </div>
 </div>

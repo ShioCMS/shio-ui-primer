@@ -1,6 +1,6 @@
 <div *ngIf="(getShObjectList() | async) as objectList; else loading">
-    <shio-repository-tabs [shSite]="objectList.shSite"></shio-repository-tabs>
-    <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5" style="margin-top: 30px;">
+    <shio-repository-tabs [shSite]="objectList.shSite" [tabIndex]="1"></shio-repository-tabs>
+    <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 mt-4">
         <div id="col-left" class="float-left" style="width: calc(100% - 300px);">
             <shio-box-list [objectList]="objectList"></shio-box-list>
         </div>

@@ -1,0 +1,39 @@
+<div *ngIf="(getBreadcrumb() | async) as breadcrumb" class="d-flex flex-items-center">
+    <div class="overflow-hidden flex-auto">
+        <div style="margin: 10px 0px">
+            <nav aria-label="Breadcrumb">
+                <ol>
+                    <li class="breadcrumb-item" [attr.aria-current]="breadcrumb.breadcrumb == null ? 'page' : null">
+                        <a *ngIf="breadcrumb.breadcrumb != null"
+                            [routerLink]="['/object-list', shPost.shSite.id]">{{shPost.shSite.name}}
+                        </a>
+                        <span *ngIf="breadcrumb.breadcrumb == null">{{shPost.shSite.name}}</span>
+                    </li>
+                    <li *ngFor="let breadcrumbItem of breadcrumb.breadcrumb;" class="breadcrumb-item"><a
+                            [routerLink]="['/object-list', breadcrumbItem.id]">{{breadcrumbItem.name}}</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <button class="btn btn-sm mr-2" type="button">
+        <octicons-eye [size]="16" class="mr-1"></octicons-eye>View Page
+    </button>
+    <button class="btn btn-sm mr-1" type="button">Publish</button>
+    <button class="btn btn-sm btn-primary" type="button">Save Draft</button>
+</div>
+<div class="Subhead">
+    <div class="Subhead-heading">{{shPost.title}}</div>
+    <div class="Subhead-actions" style="padding-top: 10px">
+
+    </div>
+    <div class="Subhead-description">Unpublished</div>
+</div>
+<nav class="UnderlineNav" aria-label="Pos Tabs">
+    <div class="UnderlineNav-body">
+        <a href="#url" class="UnderlineNav-item selected">{{shPost.shPostType.title}}</a>
+        <a href="#url" class="UnderlineNav-item">
+            <octicons-gear [size]="16" class="mr-1"></octicons-gear> Settings
+        </a>
+    </div>
+</nav>

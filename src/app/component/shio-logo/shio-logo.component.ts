@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'shio-logo',
-  template: `<svg  class="mr-1" [style.width.px]="size" [style.height.px]="size" version="1.1" aria-hidden="true" viewBox="0 0 11200 11200"
+  template: `<svg  class="mr-1" [style.width.px]="size" [style.height.px]="size" version="1.1" aria-hidden="true" viewBox="0 0 11000 11100"
   preserveAspectRatio="xMidYMid meet">
   <g id="layer101" fill="#fc644e" stroke="none">
     <path

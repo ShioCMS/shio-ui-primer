@@ -10,10 +10,8 @@ import { ShObjectData } from 'src/app/data/object/object.data';
   styleUrls: ['./shio-object-list.component.scss']
 })
 export class ShioObjectListComponent implements OnInit, OnDestroy {
-  private shObject: ShObjectService;
   private shObjectList: Observable<ShObjectData>;
-  constructor(shObject: ShObjectService, private route: ActivatedRoute, private router: Router) {
-    this.shObject = shObject;
+  constructor(private shObject: ShObjectService, private route: ActivatedRoute, private router: Router) {
     let id = this.route.snapshot.paramMap.get('id');
     this.shObjectList = this.shObject.get(id);
     this.router.routeReuseStrategy.shouldReuseRoute = function () {

@@ -40,8 +40,11 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ShioLogoComponent } from './component/shio-logo/shio-logo.component';
 import { ShioHeaderComponent } from './component/shio-header/shio-header.component';
 import { ShioContentPageComponent } from './page/shio-content-page/shio-content-page.component';
-import { ShioRepositoryTabsComponent } from './shio-repository-tabs/shio-repository-tabs.component';
+import { ShioRepositoryTabsComponent } from './component/shio-repository-tabs/shio-repository-tabs.component';
 import { OcticonsPlusComponent } from './component/octicons/plus/octicons-plus.component';
+import { ShioSitePageComponent } from './page/shio-site-page/shio-site-page.component';
+import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/shio-post-settings-page.component';
+import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs.component';
 
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');
@@ -76,7 +79,10 @@ registerLocaleData(localePt, 'pt');
     ShioHeaderComponent,
     ShioContentPageComponent,
     ShioRepositoryTabsComponent,
-    OcticonsPlusComponent
+    OcticonsPlusComponent,
+    ShioSitePageComponent,
+    ShioPostSettingsPageComponent,
+    ShioPostTabsComponent
   ],
   imports: [
     BrowserModule,

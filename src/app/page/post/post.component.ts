@@ -12,14 +12,12 @@ import { ShPostXPData } from 'src/app/data/post/postxp.data';
 })
 export class PostComponent implements OnInit {
   private breacrumbData: Observable<BreadcrumbData>;
-  private shPost: ShPostService;
   private shPostData: Observable<ShPostXPData>
   private id: string;
-  constructor(shPost: ShPostService, private route: ActivatedRoute, private router: Router) {
-    this.shPost = shPost;
+  constructor(private shPostService: ShPostService, private route: ActivatedRoute, private router: Router) {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.shPostData = this.shPost.get(this.id);
-    this.breacrumbData = this.shPost.getBreadcrumb(this.id);
+    this.shPostData = this.shPostService.get(this.id);
+    this.breacrumbData = this.shPostService.getBreadcrumb(this.id);
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
