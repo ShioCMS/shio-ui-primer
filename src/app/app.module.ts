@@ -36,7 +36,7 @@ import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
 import { LoginComponent } from './page/login';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ShioLogoComponent } from './component/shio-logo/shio-logo.component';
 import { ShioHeaderComponent } from './component/shio-header/shio-header.component';
 import { ShioContentPageComponent } from './page/shio-content-page/shio-content-page.component';
@@ -45,7 +45,12 @@ import { OcticonsPlusComponent } from './component/octicons/plus/octicons-plus.c
 import { ShioSitePageComponent } from './page/shio-site-page/shio-site-page.component';
 import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/shio-post-settings-page.component';
 import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs.component';
+import { AceModule } from 'ngx-ace-wrapper';
+import { ACE_CONFIG } from 'ngx-ace-wrapper';
+import { AceConfigInterface } from 'ngx-ace-wrapper';
 
+const DEFAULT_ACE_CONFIG: AceConfigInterface = {
+};
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');
 @NgModule({
@@ -90,12 +95,14 @@ registerLocaleData(localePt, 'pt');
     HttpClientModule,
     MomentModule,
     ReactiveFormsModule,
-    FormsModule 
+    FormsModule,
+    AceModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-     ShSiteService, ShObjectService, ShPostService
+    { provide: ACE_CONFIG, useValue: DEFAULT_ACE_CONFIG },
+    ShSiteService, ShObjectService, ShPostService
   ],
   bootstrap: [AppComponent]
 })

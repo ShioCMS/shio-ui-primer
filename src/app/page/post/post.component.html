@@ -5,11 +5,22 @@
             <div *ngFor="let shPostAttr of post.shPost.shPostAttrs;" style="margin: 10px 0px;">
                 <div class="form-group">
                     <div class="form-group-header">
-                        <label for="example-textarea">{{shPostAttr.shPostTypeAttr.label}}</label>
+                        <label for="example-textarea">{{shPostAttr.shPostTypeAttr.label}}
+                            ({{shPostAttr.shPostTypeAttr.shWidget.name}})</label>
                     </div>
                     <div class="form-group-body">
-                        <textarea class="form-control" id="example-textarea">{{shPostAttr.strValue}}</textarea>
+                        <textarea
+                            *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Text Area' || shPostAttr.shPostTypeAttr.shWidget.name === 'HTML Editor' || !(shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - HTML' || shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - Javascript') "
+                            class="form-control" id="example-textarea">{{shPostAttr.strValue}}</textarea>
+                        <input
+                            *ngIf="shPostAttr.shPostTypeAttr.shWidget.name !== 'Text Area' && shPostAttr.shPostTypeAttr.shWidget.name !== 'HTML Editor' && shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - HTML' && shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - Javascript'"
+                            class="form-control" id="example-textarea" value="{{shPostAttr.strValue}}">
+                        <div *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Ace Editor - HTML' || shPostAttr.shPostTypeAttr.shWidget.name === 'Ace Editor - Javascript'"
+                            class="ace" [ace]="config">{{shPostAttr.strValue}}</div>
+
+                          
                     </div>
+
                 </div>
             </div>
         </div>

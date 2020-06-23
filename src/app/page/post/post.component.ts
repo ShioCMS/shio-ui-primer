@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { BreadcrumbData } from 'src/app/data/folder/breadcrumb.data';
 import { ShPostService } from 'src/app/service/post/post.service';
 import { ShPostXPData } from 'src/app/data/post/postxp.data';
-
+import 'brace';
+import 'brace/mode/text';
+import 'brace/theme/github';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
