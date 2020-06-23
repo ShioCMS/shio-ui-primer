@@ -1,6 +1,7 @@
 <div class="Header">
     <div class="Header-item">
-        <a [routerLink]="['/content/dashboard']" routerLinkActive="active" class="Header-link f4 d-flex flex-items-center ">
+        <a [routerLink]="['/content/dashboard']" routerLinkActive="active"
+            class="Header-link f4 d-flex flex-items-center ">
             <shio-logo size="32"></shio-logo>
         </a>
     </div>
@@ -8,24 +9,33 @@
         <input type="search" class="form-control input-dark" style="width: 50%;" placeholder="Search for..." />
     </div>
     <div class="Header-item position-relative mr-0 d-none d-lg-flex">
-        <div>
-            <details *ngIf="(user | async) as userItem"
-                class="details-overlay details-reset js-feature-preview-indicator-container">
-                <summary class="Header-link" aria-haspopup="true">
-                    <div class="CircleBadge CircleBadge--small float-left" href="#"
-                        style="width: 32px; height: 32px;background-color: gray;margin-right: 7px;">
-                        {{userItem.firstName.charAt(0)}}{{userItem.lastName.charAt(0)}}
-                    </div>
-                    <div class="dropdown-caret" style="margin-top: 17px;padding-bottom: 10px;padding-top: 1px;"></div>
-                </summary>
-                <ul class="dropdown-menu dropdown-menu-sw">
-                    <li>
-                        <div class="dropdown-item">Signed in as <strong>{{userItem.username}}</strong></div>
-                    </li>
-                    <li class="dropdown-divider" role="separator"></li>
-                    <li><a class="dropdown-item" (click)="logout()" href>Sign out</a></li>
-                </ul>
-            </details>
-        </div>
+        <details class="details-overlay details-reset mr-3">
+            <summary class="Header-link " aria-haspopup="true" style="outline:none;">
+                <octicons-plus [size]="16" class="mr-1"></octicons-plus>
+                <div class="dropdown-caret" style="margin-top: 17px;padding-bottom: 10px;padding-top: 1px;"></div>
+            </summary>
+            <ul class="dropdown-menu dropdown-menu-sw" style="margin-right: 17px;">
+                <li><a class="dropdown-item" href>New repository</a></li>
+                <li><a class="dropdown-item" href>Import repository</a></li>
+            </ul>
+        </details>
+    </div>
+    <div class="Header-item position-relative mr-0 d-none d-lg-flex">
+        <details *ngIf="(user | async) as userItem" class="details-overlay details-reset">
+            <summary class="Header-link" aria-haspopup="true" style="outline:none;">
+                <div class="CircleBadge CircleBadge--small float-left"
+                    style="width: 32px; height: 32px;background-color: gray;margin-right: 7px;">
+                    {{userItem.firstName.charAt(0)}}{{userItem.lastName.charAt(0)}}
+                </div>
+                <div class="dropdown-caret" style="margin-top: 17px;padding-bottom: 10px;padding-top: 1px;"></div>
+            </summary>
+            <ul class="dropdown-menu dropdown-menu-sw" style="margin-right: 12px;">
+                <li>
+                    <div class="dropdown-item">Signed in as <strong>{{userItem.username}}</strong></div>
+                </li>
+                <li class="dropdown-divider" role="separator"></li>
+                <li><a class="dropdown-item" (click)="logout()" href>Sign out</a></li>
+            </ul>
+        </details>
     </div>
 </div>
