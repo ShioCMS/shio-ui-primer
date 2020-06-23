@@ -1,7 +1,7 @@
-<div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 mt-4">
+<div class="clearfix">
     <div *ngIf="(getShPost() | async) as post; else loading">
         <shio-post-tabs [shPost]="post.shPost"></shio-post-tabs>
-        <div style="margin: 10px 0px;">
+        <div class="overflow-hidden px-3 px-md-4 px-lg-5 mt-4">
             <div *ngFor="let shPostAttr of post.shPost.shPostAttrs;" style="margin: 10px 0px;">
                 <div class="form-group">
                     <div class="form-group-header">
