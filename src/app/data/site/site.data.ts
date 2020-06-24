@@ -4,4 +4,6 @@ export interface ShSiteData {
     description: string;
     date: Date;
     url: string;
+    postTypeLayout: string;
+    searchablePostTypes: string;
 }

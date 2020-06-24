@@ -37,7 +37,6 @@ export class ShPostService {
         return this.httpClient.get<BreadcrumbData>(`${environment.apiUrl}/api/v2/folder/${id}/path`)
     }
     public savePost(shPost: ShPostData): boolean {
-        console.log(JSON.stringify(shPost));
         this.httpClient.put(`${environment.apiUrl}/api/v2/post/${shPost.id}`,
             JSON.stringify(shPost))
             .subscribe(
@@ -53,6 +52,5 @@ export class ShPostService {
                     console.log('The POST observable is now completed.');
                 });
         return false;
-
     }
 }

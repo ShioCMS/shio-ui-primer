@@ -24,14 +24,34 @@ import { ShPostTypeReportData } from 'src/app/data/post/type/postTypeReport.data
 
 @Injectable()
 export class ShSiteService {
-    constructor(private http: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
     query(): Observable<ShSiteData[]> {
-        return this.http.get<ShSiteData[]>(`${environment.apiUrl}/api/v2/site`);
+        return this.httpClient.get<ShSiteData[]>(`${environment.apiUrl}/api/v2/site`);
     }
     get(id: string): Observable<ShSiteData> {
-        return this.http.get<ShSiteData>(`${environment.apiUrl}/api/v2/site/${id}`);
+        return this.httpClient.get<ShSiteData>(`${environment.apiUrl}/api/v2/site/${id}`);
     }
-    countPostType(id:string): Observable<ShPostTypeReportData[]> {
-        return this.http.get<ShPostTypeReportData[]>(`${environment.apiUrl}/api/v2/site/${id}/type/count`);
+    countPostType(id: string): Observable<ShPostTypeReportData[]> {
+        return this.httpClient.get<ShPostTypeReportData[]>(`${environment.apiUrl}/api/v2/site/${id}/type/count`);
     }
+
+    public save(shSite: ShSiteData): boolean {
+        this.httpClient.put(`${environment.apiUrl}/api/v2/site/${shSite.id}`,
+            JSON.stringify(shSite))
+            .subscribe(
+                (val) => {
+                    console.log('POST call successful value returned in body',
+                        val);
+                    return true;
+                },
+                response => {
+                    console.log('POST call in error', response);
+                },
+                () => {
+                    console.log('The POST observable is now completed.');
+                });
+        return false;
+
+    }
+
 }
