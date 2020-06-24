@@ -12,6 +12,7 @@ import { ShPostData } from '@app/data/post/post.data';
 })
 export class ShioPostTabsComponent implements OnInit {
   @Input() shPost: ShPostData;
+  public currentTab: number = 0;
   private breacrumbData: Observable<BreadcrumbData>;
   private id: string;
   tabs: any[] = [];
@@ -26,21 +27,23 @@ export class ShioPostTabsComponent implements OnInit {
     return this.breacrumbData;
   }
   ngOnInit(): void {
-    this.shPost.shPostAttrs.forEach((shPostAttr, index) => {
+    let currentTabIndex: number = 0;
+    this.shPost.shPostAttrs.sort((a,b) => a.shPostTypeAttr.ordinal - b.shPostTypeAttr.ordinal).forEach((shPostAttr, index) => {
       let tabName = this.shPost.shPostType.title;
       if (shPostAttr.shPostTypeAttr.shWidget.name === 'Tab') {
         tabName = shPostAttr.shPostTypeAttr.label;
+        currentTabIndex = index;
         this.tabs.push({
-          ordinal: shPostAttr.shPostTypeAttr.ordinal,
+          ordinal: index,
           name: shPostAttr.shPostTypeAttr.label
         });
       } else if (index === 0) {
         this.tabs.push({
-          ordinal: 0,
+          ordinal: index,
           name: tabName
         });
       }
-      shPostAttr.tab = tabName;
+      shPostAttr.tab = currentTabIndex;
     });
   }
 }

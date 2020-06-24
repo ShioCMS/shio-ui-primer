@@ -30,9 +30,15 @@
 </div>
 <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Pos Tabs">
     <div class="UnderlineNav-body">
-        <a href="#url" class="UnderlineNav-item" *ngFor="let tab of tabs; first as isFirst" [class.selected]="isFirst">{{tab.name}}</a>
-        <a href="#url" class="UnderlineNav-item">
+        <div (click)="currentTab = tab.ordinal" class="UnderlineNav-item" *ngFor="let tab of tabs"
+            [class.selected]="currentTab == tab.ordinal">{{tab.name}}</div>
+        <div (click)="currentTab = -1" href="#" class="UnderlineNav-item" [class.selected]="currentTab == -1">
             <octicons-gear [size]="16" class="mr-1"></octicons-gear> Settings
-        </a>
+        </div>
     </div>
 </nav>
+<div class="overflow-hidden px-3 px-md-4 px-lg-5 mt-2">
+    <div *ngFor="let tab of tabs">
+        <shio-post-tab [shPost]="shPost" [tabIndex]="tab.ordinal" [currentTab]="currentTab"></shio-post-tab>
+    </div>
+</div>

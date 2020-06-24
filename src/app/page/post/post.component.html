@@ -3,35 +3,6 @@
 
     <div *ngIf="(getShPost() | async) as post; else loading">
         <shio-post-tabs [shPost]="post.shPost"></shio-post-tabs>
-        <div class="overflow-hidden px-3 px-md-4 px-lg-5 mt-4">
-            <div *ngFor="let shPostAttr of post.shPost.shPostAttrs;">
-                <div *ngIf="shPostAttr.shPostTypeAttr.shWidget.name !== 'Tab'" style="margin: 10px 0px;">
-                    <div class="form-group">
-                        <div class="form-group-header">
-                            <label for="example-textarea">{{shPostAttr.shPostTypeAttr.label}}
-                                ({{shPostAttr.shPostTypeAttr.shWidget.name}})</label>
-                        </div>
-                        <div class="form-group-body">
-                            <textarea
-                                *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Text Area'"
-                                class="form-control" id="example-textarea">{{shPostAttr.strValue}}</textarea>
-                            <input
-                                *ngIf="shPostAttr.shPostTypeAttr.shWidget.name !== 'Text Area' && shPostAttr.shPostTypeAttr.shWidget.name !== 'HTML Editor' && shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - HTML' && shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - Javascript'"
-                                class="form-control" value="{{shPostAttr.strValue}}">
-                            <ace *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Ace Editor - Javascript'"
-                                fxFlex="auto" [mode]="'javascript'" style="height: 200px;"
-                                [(value)]="shPostAttr.strValue">
-                            </ace>
-                            <ace *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Ace Editor - HTML'" fxFlex="auto"
-                                [mode]="'html'" style="height: 200px;" [(value)]="shPostAttr.strValue">
-                            </ace>
-                            <editor *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'HTML Editor'" [init]="tinyMCEConfig" [(ngModel)]="shPostAttr.strValue"></editor>
-                            <!--<ckeditor *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'HTML Editor'" [editor]="chkEditor" [(ngModel)]="shPostAttr.strValue"></ckeditor>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <ng-template #loading>

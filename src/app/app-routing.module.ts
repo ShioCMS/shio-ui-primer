@@ -25,7 +25,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/content/dashboard', pathMatch: 'full', canActivate: [AuthGuard] }
     ]
   },
-  { path: '', redirectTo: '/content', pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/content/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true })],

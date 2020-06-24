@@ -48,6 +48,7 @@ import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs
 import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ShioPostTabComponent } from './component/shio-post-tab/shio-post-tab.component';
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
 };
@@ -87,7 +88,8 @@ registerLocaleData(localePt, 'pt');
     OcticonsPlusComponent,
     ShioSitePageComponent,
     ShioPostSettingsPageComponent,
-    ShioPostTabsComponent
+    ShioPostTabsComponent,
+    ShioPostTabComponent
   ],
   imports: [
     BrowserModule,
