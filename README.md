@@ -15,7 +15,7 @@ guidelines](CONTRIBUTING.md).**
 
 ```shell
 $ git clone https://github.com/ShioCMS/shio-ui-primer.git
-$ cd shio-stock
+$ cd shio-ui-primer
 ```
 
 ## Deploy 
@@ -34,7 +34,7 @@ Start Shio CMS following the procedure described in https://github.com/ShioCMS/s
 
 ### 3. Runtime
 
-Use Ng to execute Shio Stock.
+Use Ng to execute Shio CMS UI Primer.
 
 ```shell
 $ ng serve --open
@@ -42,7 +42,7 @@ $ ng serve --open
 
 ### 4. Build
 
-Use Ng to build Shio Stock.
+Use Ng to build Shio CMS UI Primer.
 
 ```shell
 $ ng build --prod
