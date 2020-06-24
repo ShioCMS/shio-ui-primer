@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { MomentModule } from 'angular2-moment';
+import { MomentModule } from 'ngx-moment';
 import { ShSiteService } from './service/site/site.service';
 import { ShObjectService } from './service/object/object.service';
 import { ShPostService } from './service/post/post.service';
@@ -47,7 +47,7 @@ import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/sh
 import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs.component';
 import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
-
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
 };
@@ -97,7 +97,8 @@ registerLocaleData(localePt, 'pt');
     ReactiveFormsModule,
     FormsModule,
     AceModule,
-    EditorModule
+    EditorModule,
+    CKEditorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

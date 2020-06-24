@@ -12,6 +12,7 @@ import { ShPostService } from 'src/app/service/post/post.service';
 import { ShPostXPData } from 'src/app/data/post/postxp.data';
 
 import { AceConfigInterface, AceComponent, AceDirective } from 'ngx-ace-wrapper';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-post',
@@ -29,8 +30,9 @@ export class PostComponent implements OnInit, AfterViewInit {
     theme:'eclipse',
     readOnly: false
   };
-
+  public chkEditor = ClassicEditor;
   public tinyMCEConfig = {
+    
     base_url: '/tinymce',
     suffix: '.min',
     height: 300,

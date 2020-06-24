@@ -1,4 +1,6 @@
 <div class="clearfix">
+   
+
     <div *ngIf="(getShPost() | async) as post; else loading">
         <shio-post-tabs [shPost]="post.shPost"></shio-post-tabs>
         <div class="overflow-hidden px-3 px-md-4 px-lg-5 mt-4">
@@ -24,6 +26,7 @@
                                 [mode]="'html'" style="height: 200px;" [(value)]="shPostAttr.strValue">
                             </ace>
                             <editor *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'HTML Editor'" [init]="tinyMCEConfig" [(ngModel)]="shPostAttr.strValue"></editor>
+                            <!--<ckeditor *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'HTML Editor'" [editor]="chkEditor" [(ngModel)]="shPostAttr.strValue"></ckeditor>-->
                         </div>
                     </div>
                 </div>
