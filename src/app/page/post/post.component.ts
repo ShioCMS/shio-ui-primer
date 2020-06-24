@@ -1,6 +1,6 @@
 import 'brace';
+import 'brace/theme/eclipse';
 import 'brace/mode/text';
-import 'brace/theme/eclipse';;
 import 'brace/mode/javascript';
 import 'brace/mode/html';
 
@@ -28,6 +28,22 @@ export class PostComponent implements OnInit, AfterViewInit {
     showGutter: true,
     theme:'eclipse',
     readOnly: false
+  };
+
+  public tinyMCEConfig = {
+    base_url: '/tinymce',
+    suffix: '.min',
+    height: 300,
+    menubar: false,
+    plugins: [
+      'advlist autolink lists link image charmap print preview anchor',
+      'searchreplace visualblocks code fullscreen',
+      'insertdatetime media table paste code help wordcount'
+    ],
+    toolbar:
+      'undo redo | formatselect | bold italic backcolor | \
+      alignleft aligncenter alignright alignjustify | \
+      bullist numlist outdent indent | removeformat | help'
   };
 
   @ViewChild(AceComponent, { static: false }) componentRef?: AceComponent;

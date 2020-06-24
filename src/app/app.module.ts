@@ -46,6 +46,7 @@ import { ShioSitePageComponent } from './page/shio-site-page/shio-site-page.comp
 import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/shio-post-settings-page.component';
 import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs.component';
 import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -95,12 +96,14 @@ registerLocaleData(localePt, 'pt');
     MomentModule,
     ReactiveFormsModule,
     FormsModule,
-    AceModule
+    AceModule,
+    EditorModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: ACE_CONFIG, useValue: DEFAULT_ACE_CONFIG },
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' },
     ShSiteService, ShObjectService, ShPostService
   ],
   bootstrap: [AppComponent]

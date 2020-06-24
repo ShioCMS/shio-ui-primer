@@ -25,13 +25,14 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ],
             "styles": [
               "node_modules/@primer/css/utilities/index.scss",
               "src/styles.scss"              
             ],
-            "scripts": []
+            "scripts": ["node_modules/tinymce/tinymce.min.js"]
           },
           "configurations": {
             "production": {
@@ -97,12 +98,13 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
             ],
             "styles": [             
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/tinymce/tinymce.min.js"]
           }
         },
         "lint": {
