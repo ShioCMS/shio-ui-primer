@@ -1,27 +1,27 @@
-<div *ngIf="(getBreadcrumb() | async) as breadcrumb" class="d-flex flex-items-center overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light mt-3">
+<div *ngIf="(getBreadcrumb() | async) as breadcrumb"
+    class="d-flex flex-items-center overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light mt-3">
     <octicons-note size="16" class="mr-2" style="fill:gray"></octicons-note>
     <div class=" overflow-hidden flex-auto" style="font-size: larger;font-weight: 500;">
-        
-            <nav aria-label="Breadcrumb">
-                <ol class="ml-2">
-                    <li class="breadcrumb-item" [attr.aria-current]="breadcrumb.breadcrumb == null ? 'page' : null">
-                        <a *ngIf="breadcrumb.breadcrumb != null"
-                            [routerLink]="['/content/object-list', shPost.shSite.id]">{{shPost.shSite.name}}
-                        </a>
-                        <span *ngIf="breadcrumb.breadcrumb == null">{{shPost.shSite.name}}</span>
-                    </li>
-                    <li *ngFor="let breadcrumbItem of breadcrumb.breadcrumb;" class="breadcrumb-item"><a
-                            [routerLink]="['/content/object-list', breadcrumbItem.id]">{{breadcrumbItem.name}}</a>
-                    </li>
-                    <li class="breadcrumb-item" aria-current>
-                       {{shPost.title}}
-                    </li>
-                </ol>
-            </nav>   
-           
+
+        <nav aria-label="Breadcrumb">
+            <ol class="ml-2">
+                <li class="breadcrumb-item" [attr.aria-current]="breadcrumb.breadcrumb == null ? 'page' : null">
+                    <a *ngIf="breadcrumb.breadcrumb != null"
+                        [routerLink]="['/content/object-list', shPost.shSite.id]">{{shPost.shSite.name}}
+                    </a>
+                    <span *ngIf="breadcrumb.breadcrumb == null">{{shPost.shSite.name}}</span>
+                </li>
+                <li *ngFor="let breadcrumbItem of breadcrumb.breadcrumb;" class="breadcrumb-item"><a
+                        [routerLink]="['/content/object-list', breadcrumbItem.id]">{{breadcrumbItem.name}}</a>
+                </li>
+                <li class="breadcrumb-item" aria-current>
+                    {{shPost.title}}
+                </li>
+            </ol>
+        </nav>
+
     </div>
-    <span title="Label: green outline label"
-    class="Label Label--outline Label--outline-green mr-3">Published</span>  
+    <span title="Label: green outline label" class="Label Label--outline Label--outline-green mr-3">Published</span>
     <button class="btn btn-sm mr-2" type="button">
         <octicons-eye [size]="16" class="mr-1"></octicons-eye>View Page
     </button>
@@ -30,7 +30,7 @@
 </div>
 <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Pos Tabs">
     <div class="UnderlineNav-body">
-        <a href="#url" class="UnderlineNav-item selected">{{shPost.shPostType.title}}</a>
+        <a href="#url" class="UnderlineNav-item" *ngFor="let tab of tabs; first as isFirst" [class.selected]="isFirst">{{tab.name}}</a>
         <a href="#url" class="UnderlineNav-item">
             <octicons-gear [size]="16" class="mr-1"></octicons-gear> Settings
         </a>

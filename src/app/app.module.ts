@@ -45,11 +45,10 @@ import { OcticonsPlusComponent } from './component/octicons/plus/octicons-plus.c
 import { ShioSitePageComponent } from './page/shio-site-page/shio-site-page.component';
 import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/shio-post-settings-page.component';
 import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs.component';
-import { AceModule } from 'ngx-ace-wrapper';
-import { ACE_CONFIG } from 'ngx-ace-wrapper';
-import { AceConfigInterface } from 'ngx-ace-wrapper';
+import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
+  tabSize: 2
 };
 registerLocaleData(localeEn, 'en');
 registerLocaleData(localePt, 'pt');

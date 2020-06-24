@@ -14,6 +14,7 @@ export class ShioPostTabsComponent implements OnInit {
   @Input() shPost: ShPostData;
   private breacrumbData: Observable<BreadcrumbData>;
   private id: string;
+  tabs: any[] = [];
   constructor(private shPostService: ShPostService, private route: ActivatedRoute, private router: Router) {
     this.id = this.route.snapshot.paramMap.get('id');
     this.breacrumbData = this.shPostService.getBreadcrumb(this.id);
@@ -24,6 +25,22 @@ export class ShioPostTabsComponent implements OnInit {
   getBreadcrumb(): Observable<BreadcrumbData> {
     return this.breacrumbData;
   }
-  ngOnInit(): void {    
+  ngOnInit(): void {
+    this.shPost.shPostAttrs.forEach((shPostAttr, index) => {
+      let tabName = this.shPost.shPostType.title;
+      if (shPostAttr.shPostTypeAttr.shWidget.name === 'Tab') {
+        tabName = shPostAttr.shPostTypeAttr.label;
+        this.tabs.push({
+          ordinal: shPostAttr.shPostTypeAttr.ordinal,
+          name: shPostAttr.shPostTypeAttr.label
+        });
+      } else if (index === 0) {
+        this.tabs.push({
+          ordinal: 0,
+          name: tabName
+        });
+      }
+      shPostAttr.tab = tabName;
+    });
   }
 }
