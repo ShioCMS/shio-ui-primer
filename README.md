@@ -1,10 +1,10 @@
 [![Twitter](https://img.shields.io/twitter/follow/shiocms.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=shiocms)
 
+# Shio CMS user interface using Primer CSS
+
 ![shio-primer.png](https://shiocms.github.io/shio-ui-primer/img/shio-primer.png) 
 
-**Viglet Shio UI Primer**
-
-**If you'd like to contribute to Viglet Shio UI Primer, be sure to review the [contribution
+**If you'd like to contribute to Shio CMS UI Primer, be sure to review the [contribution
 guidelines](CONTRIBUTING.md).**
 
 **We use [GitHub issues](https://github.com/ShioCMS/shio-ui-primer/issues) for tracking requests and bugs.**
