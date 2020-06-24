@@ -46,4 +46,7 @@ export class ShioPostTabsComponent implements OnInit {
       shPostAttr.tab = currentTabIndex;
     });
   }
+  public savePost() {
+    this.shPostService.savePost(this.shPost);
+  }
 }

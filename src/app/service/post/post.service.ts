@@ -21,6 +21,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ShPostXPData } from 'src/app/data/post/postxp.data';
 import { BreadcrumbData } from 'src/app/data/folder/breadcrumb.data';
+import { ShPostData } from '@app/data/post/post.data';
 
 @Injectable({
     providedIn: 'root'
@@ -34,5 +35,24 @@ export class ShPostService {
     }
     getBreadcrumb(id: string): Observable<BreadcrumbData> {
         return this.httpClient.get<BreadcrumbData>(`${environment.apiUrl}/api/v2/folder/${id}/path`)
+    }
+    public savePost(shPost: ShPostData): boolean {
+        console.log(JSON.stringify(shPost));
+        this.httpClient.put(`${environment.apiUrl}/api/v2/post/${shPost.id}`,
+            JSON.stringify(shPost))
+            .subscribe(
+                (val) => {
+                    console.log('POST call successful value returned in body',
+                        val);
+                    return true;
+                },
+                response => {
+                    console.log('POST call in error', response);
+                },
+                () => {
+                    console.log('The POST observable is now completed.');
+                });
+        return false;
+
     }
 }

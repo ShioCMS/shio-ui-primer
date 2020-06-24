@@ -30,7 +30,12 @@ $ npm install
 
 ### 2. Start Shio CMS
 
-Start Shio CMS following the procedure described in https://github.com/ShioCMS/shio/blob/master/README.md
+Start Shio CMS following the procedure described in https://github.com/ShioCMS/shio/blob/master/README.md and use the ui-dev profile to start the Shio CMS.
+
+```shell
+export SPRING_PROFILES_ACTIVE=ui-dev
+$ ./gradlew bootrun
+```
 
 ### 3. Runtime
 

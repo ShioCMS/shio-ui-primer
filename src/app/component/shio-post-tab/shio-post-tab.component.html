@@ -8,15 +8,15 @@
                 </div>
                 <div class="form-group-body">
                     <textarea *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Text Area'" class="form-control"
-                        id="example-textarea">{{shPostAttr.strValue}}</textarea>
+                        id="example-textarea"  [(ngModel)]="shPostAttr.strValue"></textarea>
                     <input
                         *ngIf="shPostAttr.shPostTypeAttr.shWidget.name !== 'Text Area' && shPostAttr.shPostTypeAttr.shWidget.name !== 'HTML Editor' && shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - HTML' && shPostAttr.shPostTypeAttr.shWidget.name !== 'Ace Editor - Javascript'"
-                        class="form-control" value="{{shPostAttr.strValue}}">
+                        class="form-control"  [(ngModel)]="shPostAttr.strValue">
                     <ace *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Ace Editor - Javascript'" fxFlex="auto"
-                        [mode]="'javascript'" style="height: 200px;" [(value)]="shPostAttr.strValue">
+                        [mode]="'javascript'" style="height: 200px;"  [(value)]="shPostAttr.strValue">
                     </ace>
                     <ace *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Ace Editor - HTML'" fxFlex="auto"
-                        [mode]="'html'" style="height: 200px;" [(value)]="shPostAttr.strValue">
+                        [mode]="'html'" style="height: 200px;"  [(value)]="shPostAttr.strValue">
                     </ace>
                     <editor *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'HTML Editor'" [init]="tinyMCEConfig"
                         [(ngModel)]="shPostAttr.strValue"></editor>

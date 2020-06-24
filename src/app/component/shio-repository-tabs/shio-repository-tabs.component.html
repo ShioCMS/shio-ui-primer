@@ -2,7 +2,8 @@
     <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" style="padding-top: 20px;">
         <div class="float-left d-flex flex-items-center">
             <octicons-repository size="16" class="mr-1" style="fill:gray"></octicons-repository>
-            <a [routerLink]="['/content/object-list', shSite.id]" routerLinkActive="active" style="font-size: larger;font-weight: 600;">{{shSite.name}}</a>
+            <a [routerLink]="['/content/object-list', shSite.id]" routerLinkActive="active"
+                style="font-size: larger;font-weight: 600;">{{shSite.name}}</a>
         </div>
 
         <div class="float-right">
@@ -16,7 +17,8 @@
     </div>
     <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Dashboard Tabs">
         <div class="UnderlineNav-body">
-            <a [routerLink]="['/content/object-list', shSite.id]" class="UnderlineNav-item" [class.selected]="tabIndex == 1">
+            <a [routerLink]="['/content/object-list', shSite.id]" class="UnderlineNav-item"
+                [class.selected]="tabIndex == 1">
                 <octicons-note size="16" class="mr-2"></octicons-note>Content
             </a>
             <a [routerLink]="['/content/site', shSite.id]" class="UnderlineNav-item" [class.selected]="tabIndex == 2">
