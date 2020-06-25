@@ -1,26 +1,39 @@
 <div>
-    <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" style="padding-top: 20px;">
-        <div class="float-left d-flex flex-items-center">
-            <octicons-repository size="16" class="mr-1" style="fill:gray"></octicons-repository>
-            <a [routerLink]="['/content/object-list', shSite.id]" routerLinkActive="active"
-                style="font-size: larger;font-weight: 600;">{{shSite.name}}</a>
-        </div>
-
-        <div class="float-right">
-            <button class="btn btn-sm" type="button">
-                <octicons-eye size="16" class="mr-1"></octicons-eye>View Site
-            </button>           
-        </div>
+  <div class="clearfix overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" style="padding-top: 20px;">
+    <div class="float-left d-flex flex-items-center">
+      <octicons-repository size="16" class="mr-1" style="fill:gray"></octicons-repository>
+      <a [routerLink]="['/content/object-list', shSite.id]" routerLinkActive="active"
+        style="font-size: larger;font-weight: 600;">{{shSite.name}}</a>
     </div>
-    <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Dashboard Tabs">
-        <div class="UnderlineNav-body">
-            <a [routerLink]="['/content/object-list', shSite.id]" class="UnderlineNav-item"
-                [class.selected]="tabIndex == 1">
-                <octicons-note size="16" class="mr-2"></octicons-note>Content
-            </a>
-            <a [routerLink]="['/content/site', shSite.id]" class="UnderlineNav-item" [class.selected]="tabIndex == 2">
-                <octicons-gear size="16" class="mr-2"></octicons-gear> Settings
-            </a>
-        </div>
-    </nav>
+
+    <div class="float-right d-flex flex-items-center">
+      <div class="mr-2">
+        <button class="btn btn-sm btn-with-count" href="#url" role="button">
+          <octicons-history [size]="16" class="mr-1"></octicons-history>
+          <span>Commit</span>
+        </button>
+        <button class="social-count" href="#url">6</button>
+      </div>
+      <div class="mr-2">
+        <button class="btn btn-sm btn-with-count" href="#url" role="button">
+          <octicons-people [size]="16" class="mr-1"></octicons-people>
+          <span>Contributor</span>
+        </button>
+        <button class="social-count" href="#url">1</button>
+      </div>
+      <button class="btn btn-sm" type="button">
+        <octicons-eye size="16" class="mr-1"></octicons-eye>View Site
+      </button>
+    </div>
+  </div>
+  <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Dashboard Tabs">
+    <div class="UnderlineNav-body">
+      <a [routerLink]="['/content/object-list', shSite.id]" class="UnderlineNav-item" [class.selected]="tabIndex == 1">
+        <octicons-note size="16" class="mr-2"></octicons-note>Content
+      </a>
+      <a [routerLink]="['/content/site', shSite.id]" class="UnderlineNav-item" [class.selected]="tabIndex == 2">
+        <octicons-gear size="16" class="mr-2"></octicons-gear> Settings
+      </a>
+    </div>
+  </nav>
 </div>

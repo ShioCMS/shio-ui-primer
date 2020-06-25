@@ -3,21 +3,7 @@
         <input class="form-control input-sm" style="width: 100%;" type="text"
         i18n-placeholder="@@FindObjectCurrentFolder" placeholder="Find an object in the current folder..." aria-label="Find an object in the current folder" />
     </div>
-    <div class="float-right" style="display: inline-flex;">
-        <div>
-            <details class="dropdown details-reset details-overlay d-inline-block mr-2">
-                <summary class="btn btn-sm" aria-haspopup="true">
-                    Order
-                    <div class="dropdown-caret"></div>
-                </summary>
-
-                <ul class="dropdown-menu dropdown-menu-se">
-                    <li><a class="dropdown-item" href="#url" i18n="@@name">Name</a></li>
-                    <li><a class="dropdown-item" href="#url" i18n="@@description">Description</a></li>
-                    <li><a class="dropdown-item" href="#url" i18n="@@date">Date</a></li>
-                </ul>
-            </details>
-        </div>
+    <div class="float-right" style="display: inline-flex;">       
         <div>
             <details class="dropdown details-reset details-overlay d-inline-block mr-2">
                 <summary class="btn btn-sm" aria-haspopup="true">
@@ -125,10 +111,20 @@
                     style="position: relative;top: 1px;display: inline-block;width: 12px;height: 12px;border-radius: 50%;background-color: #2b7489;"></span>
                 <span class="ml-1">Site</span>
             </div>
-            <octicons-history size="16" class="mr-1"></octicons-history>
-            <span class="mr-4"> 10 commits</span>
-            <octicons-people size="16" class="mr-1"></octicons-people>
-            <span> 1 contributor</span>
+            <div>
+                <details class="dropdown details-reset details-overlay d-inline-block mr-2">
+                    <summary class="btn btn-sm" aria-haspopup="true">
+                        Order
+                        <div class="dropdown-caret"></div>
+                    </summary>
+    
+                    <ul class="dropdown-menu dropdown-menu-se">
+                        <li><a class="dropdown-item" href="#url" i18n="@@name">Name</a></li>
+                        <li><a class="dropdown-item" href="#url" i18n="@@description">Description</a></li>
+                        <li><a class="dropdown-item" href="#url" i18n="@@date">Date</a></li>
+                    </ul>
+                </details>
+            </div>
         </div>
         <ul>
             <li *ngFor="let shFolder of objectList.shFolders" class="Box-row">

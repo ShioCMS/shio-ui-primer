@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { ShSiteService } from '@app/service/site/site.service';
 import { ShSiteData } from '@app/data/site/site.data';
 import { AceConfigInterface } from 'ngx-ace-wrapper';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-shio-site-page',
@@ -19,9 +20,9 @@ export class ShioSitePageComponent implements OnInit {
     theme: 'eclipse',
     readOnly: false
   };
-  
   private shSite: Observable<ShSiteData>;
-  constructor(private shSiteService: ShSiteService, private route: ActivatedRoute, private router: Router) {
+
+  constructor(private readonly notifier: NotifierService, private shSiteService: ShSiteService, private route: ActivatedRoute, private router: Router) {
     let id = this.route.snapshot.paramMap.get('id');
     this.shSite = this.shSiteService.get(id);
   }
@@ -35,6 +36,17 @@ export class ShioSitePageComponent implements OnInit {
   }
 
   public saveSite(_shSite: ShSiteData) {
-    this.shSiteService.save(_shSite);
+    this.shSiteService.save(_shSite).subscribe(
+      (val) => {
+          this.notifier.notify("success", "Repository settings was updated.");
+          return true;
+      },
+      response => {
+        this.notifier.notify("error", "Repository settings was error: " + response);
+      },
+      () => {
+         // console.log('The POST observable is now completed.');
+      });
+    
   }
 }

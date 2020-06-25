@@ -35,22 +35,11 @@ export class ShSiteService {
         return this.httpClient.get<ShPostTypeReportData[]>(`${environment.apiUrl}/api/v2/site/${id}/type/count`);
     }
 
-    public save(shSite: ShSiteData): boolean {
-        this.httpClient.put(`${environment.apiUrl}/api/v2/site/${shSite.id}`,
-            JSON.stringify(shSite))
-            .subscribe(
-                (val) => {
-                    console.log('POST call successful value returned in body',
-                        val);
-                    return true;
-                },
-                response => {
-                    console.log('POST call in error', response);
-                },
-                () => {
-                    console.log('The POST observable is now completed.');
-                });
-        return false;
+    public save(shSite: ShSiteData): Observable<Object> {
+        
+        
+        return  this.httpClient.put(`${environment.apiUrl}/api/v2/site/${shSite.id}`,
+        JSON.stringify(shSite));
 
     }
 
