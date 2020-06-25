@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsGearComponent } from './octicons-gear.component';
+import { OcticonsGear } from './octicons-gear.component';
 
-describe('OcticonsGearComponent', () => {
-  let component: OcticonsGearComponent;
-  let fixture: ComponentFixture<OcticonsGearComponent>;
+describe('OcticonsGear', () => {
+  let component: OcticonsGear;
+  let fixture: ComponentFixture<OcticonsGear>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsGearComponent ]
+      declarations: [ OcticonsGear ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsGearComponent);
+    fixture = TestBed.createComponent(OcticonsGear);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

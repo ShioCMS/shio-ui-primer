@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   </path>
 </svg>`,
 })
-export class OcticonsCopyComponent {
+export class OcticonsCopy {
   @Input() size: number;
 }
 

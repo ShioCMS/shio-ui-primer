@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsDownloadComponent } from './octicons-download.component';
+import { OcticonsDownload } from './octicons-download.component';
 
-describe('OcticonsDownloadComponent', () => {
-  let component: OcticonsDownloadComponent;
-  let fixture: ComponentFixture<OcticonsDownloadComponent>;
+describe('OcticonsDownload', () => {
+  let component: OcticonsDownload;
+  let fixture: ComponentFixture<OcticonsDownload>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsDownloadComponent ]
+      declarations: [ OcticonsDownload ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsDownloadComponent);
+    fixture = TestBed.createComponent(OcticonsDownload);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

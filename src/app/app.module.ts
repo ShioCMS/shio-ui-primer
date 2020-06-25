@@ -33,8 +33,9 @@ import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs
 import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { OcticonsRepositoryComponent, OcticonsPencilComponent, OcticonsGearComponent, OcticonsCopyComponent, OcticonsNoteComponent, OcticonsWorkflowComponent, OcticonsFileDirectoryComponent, OcticonsPackageComponent, OcticonsCodeComponent, OcticonsUploadComponent, OcticonsHistoryComponent, OcticonsEyeComponent, OcticonsPeopleComponent, OcticonsDownloadComponent, OcticonsPlusComponent } from 'src/octicons';
 import { ShioPostTabComponent } from './component/shio-post-tab/shio-post-tab.component';
+import { OcticonsRepository, OcticonsPencil, OcticonsGear, OcticonsFileDirectory, OcticonsNote, OcticonsWorkflow, OcticonsPackage, OcticonsCode, OcticonsPeople, OcticonsHistory, OcticonsEye, OcticonsDownload, OcticonsPlus, OcticonsUpload, OcticonsCopy } from 'src/octicons';
+
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
 };
@@ -48,21 +49,21 @@ registerLocaleData(localePt, 'pt');
     PostTypeListComponent,
     ApiPlaygroundComponent,
     PostComponent,
-    OcticonsRepositoryComponent,
-    OcticonsPencilComponent,
-    OcticonsGearComponent,
-    OcticonsCopyComponent,
-    OcticonsFileDirectoryComponent,
-    OcticonsNoteComponent,
-    OcticonsWorkflowComponent,
-    OcticonsPackageComponent,
-    OcticonsCodeComponent,
-    OcticonsUploadComponent,
-    OcticonsPeopleComponent,
-    OcticonsHistoryComponent,
-    OcticonsEyeComponent,
-    OcticonsDownloadComponent,
-    OcticonsPlusComponent,
+    OcticonsRepository,
+    OcticonsPencil,
+    OcticonsGear,
+    OcticonsCopy,
+    OcticonsFileDirectory,
+    OcticonsNote,
+    OcticonsWorkflow,
+    OcticonsPackage,
+    OcticonsCode,
+    OcticonsUpload,
+    OcticonsPeople,
+    OcticonsHistory,
+    OcticonsEye,
+    OcticonsDownload,
+    OcticonsPlus,
     ShioBoxListComponent,
     ShioRepositoryAboutComponent,
     ShioPostTypeReportComponent,

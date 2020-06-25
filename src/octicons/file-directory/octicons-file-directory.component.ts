@@ -12,7 +12,7 @@ import { Component, Input } from '@angular/core';
 `,
 
 })
-export class OcticonsFileDirectoryComponent {
+export class OcticonsFileDirectory {
   @Input() size: number;
 }
 

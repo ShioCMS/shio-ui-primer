@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsFileDirectoryComponent } from './octicons-file-directory.component';
+import { OcticonsFileDirectory } from './octicons-file-directory.component';
 
-describe('OcticonsFileDirectoryComponent', () => {
-  let component: OcticonsFileDirectoryComponent;
-  let fixture: ComponentFixture<OcticonsFileDirectoryComponent>;
+describe('OcticonsFileDirectory', () => {
+  let component: OcticonsFileDirectory;
+  let fixture: ComponentFixture<OcticonsFileDirectory>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsFileDirectoryComponent ]
+      declarations: [ OcticonsFileDirectory ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsFileDirectoryComponent);
+    fixture = TestBed.createComponent(OcticonsFileDirectory);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

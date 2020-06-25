@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsHistoryComponent } from './octicons-history.component';
+import { OcticonsHistory } from './octicons-history.component';
 
-describe('OcticonsHistoryComponent', () => {
-  let component: OcticonsHistoryComponent;
-  let fixture: ComponentFixture<OcticonsHistoryComponent>;
+describe('OcticonsHistory', () => {
+  let component: OcticonsHistory;
+  let fixture: ComponentFixture<OcticonsHistory>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsHistoryComponent ]
+      declarations: [ OcticonsHistory ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsHistoryComponent);
+    fixture = TestBed.createComponent(OcticonsHistory);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

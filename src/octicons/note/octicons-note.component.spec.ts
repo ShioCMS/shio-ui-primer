@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsNoteComponent } from './octicons-note.component';
+import { OcticonsNote } from './octicons-note.component';
 
-describe('OcticonsNoteComponent', () => {
-  let component: OcticonsNoteComponent;
-  let fixture: ComponentFixture<OcticonsNoteComponent>;
+describe('OcticonsNote', () => {
+  let component: OcticonsNote;
+  let fixture: ComponentFixture<OcticonsNote>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsNoteComponent ]
+      declarations: [ OcticonsNote ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsNoteComponent);
+    fixture = TestBed.createComponent(OcticonsNote);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

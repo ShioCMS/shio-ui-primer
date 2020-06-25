@@ -9,6 +9,6 @@ import { Component, Input } from '@angular/core';
   </path>
 </svg>`,
 })
-export class OcticonsEyeComponent {
+export class OcticonsEye {
   @Input() size: number;
 }

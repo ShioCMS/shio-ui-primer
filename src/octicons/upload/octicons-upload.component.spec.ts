@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsUploadComponent } from './octicons-upload.component';
+import { OcticonsUpload } from './octicons-upload.component';
 
-describe('OcticonsUploadComponent', () => {
-  let component: OcticonsUploadComponent;
-  let fixture: ComponentFixture<OcticonsUploadComponent>;
+describe('OcticonsUpload', () => {
+  let component: OcticonsUpload;
+  let fixture: ComponentFixture<OcticonsUpload>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsUploadComponent ]
+      declarations: [ OcticonsUpload ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsUploadComponent);
+    fixture = TestBed.createComponent(OcticonsUpload);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

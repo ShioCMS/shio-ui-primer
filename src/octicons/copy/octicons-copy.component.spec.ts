@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsCopyComponent } from './octicons-copy.component';
+import { OcticonsCopy } from './octicons-copy.component';
 
-describe('OcticonsCopyComponent', () => {
-  let component: OcticonsCopyComponent;
-  let fixture: ComponentFixture<OcticonsCopyComponent>;
+describe('OcticonsCopy', () => {
+  let component: OcticonsCopy;
+  let fixture: ComponentFixture<OcticonsCopy>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsCopyComponent ]
+      declarations: [ OcticonsCopy ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsCopyComponent);
+    fixture = TestBed.createComponent(OcticonsCopy);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

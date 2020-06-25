@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   </path>
 </svg>`,
 })
-export class OcticonsWorkflowComponent {
+export class OcticonsWorkflow {
   @Input() size: number;
 }

@@ -8,6 +8,6 @@ import { Component, Input } from '@angular/core';
   </path>
 </svg>`,
 })
-export class OcticonsUploadComponent {
+export class OcticonsUpload {
   @Input() size: number;
 }

@@ -10,6 +10,6 @@ import { Component, Input } from '@angular/core';
 </svg>`,
 })
 
-export class OcticonsDownloadComponent {
+export class OcticonsDownload {
   @Input() size: number;
 }

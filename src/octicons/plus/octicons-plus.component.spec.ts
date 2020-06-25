@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OcticonsPlusComponent } from './octicons-plus.component';
+import { OcticonsPlus } from './octicons-plus.component';
 
-describe('OcticonsPlusComponent', () => {
-  let component: OcticonsPlusComponent;
-  let fixture: ComponentFixture<OcticonsPlusComponent>;
+describe('OcticonsPlus', () => {
+  let component: OcticonsPlus;
+  let fixture: ComponentFixture<OcticonsPlus>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OcticonsPlusComponent ]
+      declarations: [ OcticonsPlus ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OcticonsPlusComponent);
+    fixture = TestBed.createComponent(OcticonsPlus);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
