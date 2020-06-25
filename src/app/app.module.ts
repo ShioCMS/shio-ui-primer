@@ -7,20 +7,6 @@ import { MomentModule } from 'ngx-moment';
 import { ShSiteService } from './service/site/site.service';
 import { ShObjectService } from './service/object/object.service';
 import { ShPostService } from './service/post/post.service';
-import { OcticonsRepositoryComponent } from './component/octicons/repository/octicons-repository.component';
-import { OcticonsPencilComponent } from './component/octicons/pencil/octicons-pencil.component';
-import { OcticonsGearComponent } from './component/octicons/gear/octicons-gear.component';
-import { OcticonsCopyComponent } from './component/octicons/copy/octicons-copy.component';
-import { OcticonsFileDirectoryComponent } from './component/octicons/file-directory/octicons-file-directory.component';
-import { OcticonsNoteComponent } from './component/octicons/note/octicons-note.component';
-import { OcticonsWorkflowComponent } from './component/octicons/workflow/octicons-workflow.component';
-import { OcticonsPackageComponent } from './component/octicons/package/octicons-package.component';
-import { OcticonsUploadComponent } from './component/octicons/upload/octicons-upload.component';
-import { OcticonsPeopleComponent } from './component/octicons/people/octicons-people.component';
-import { OcticonsHistoryComponent } from './component/octicons/history/octicons-history.component';
-import { OcticonsEyeComponent } from './component/octicons/eye/octicons-eye.component';
-import { OcticonsDownloadComponent } from './component/octicons/download/octicons-download.component';
-import { OcticonsCodeComponent } from './component/octicons/code/octicons-code.component';
 import { ShioRepositoryListComponent } from './component/shio-repository-list/shio-repository-list.component';
 import { ShioPostTypeReportComponent } from './component/shio-post-type-report/shio-post-type-report.component';
 import { ShioRepositoryAboutComponent } from './component/shio-repository-about/shio-repository-about.component';
@@ -41,13 +27,13 @@ import { ShioLogoComponent } from './component/shio-logo/shio-logo.component';
 import { ShioHeaderComponent } from './component/shio-header/shio-header.component';
 import { ShioContentPageComponent } from './page/shio-content-page/shio-content-page.component';
 import { ShioRepositoryTabsComponent } from './component/shio-repository-tabs/shio-repository-tabs.component';
-import { OcticonsPlusComponent } from './component/octicons/plus/octicons-plus.component';
 import { ShioSitePageComponent } from './page/shio-site-page/shio-site-page.component';
 import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/shio-post-settings-page.component';
 import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs.component';
 import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { OcticonsRepositoryComponent, OcticonsPencilComponent, OcticonsGearComponent, OcticonsCopyComponent, OcticonsNoteComponent, OcticonsWorkflowComponent, OcticonsFileDirectoryComponent, OcticonsPackageComponent, OcticonsCodeComponent, OcticonsUploadComponent, OcticonsHistoryComponent, OcticonsEyeComponent, OcticonsPeopleComponent, OcticonsDownloadComponent, OcticonsPlusComponent } from 'src/octicons';
 import { ShioPostTabComponent } from './component/shio-post-tab/shio-post-tab.component';
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -76,6 +62,7 @@ registerLocaleData(localePt, 'pt');
     OcticonsHistoryComponent,
     OcticonsEyeComponent,
     OcticonsDownloadComponent,
+    OcticonsPlusComponent,
     ShioBoxListComponent,
     ShioRepositoryAboutComponent,
     ShioPostTypeReportComponent,
@@ -85,7 +72,6 @@ registerLocaleData(localePt, 'pt');
     ShioHeaderComponent,
     ShioContentPageComponent,
     ShioRepositoryTabsComponent,
-    OcticonsPlusComponent,
     ShioSitePageComponent,
     ShioPostSettingsPageComponent,
     ShioPostTabsComponent,
