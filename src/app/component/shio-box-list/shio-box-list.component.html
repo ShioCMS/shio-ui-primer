@@ -48,6 +48,20 @@
                 </ul>
             </details>
         </div>
+        <div>
+            <details class="dropdown details-reset details-overlay d-inline-block mr-2">
+                <summary class="btn btn-sm" aria-haspopup="true">
+                    <octicons-download size="16" class="mr-1"></octicons-download>Download
+                    <div class="dropdown-caret"></div>
+                </summary>
+
+                <ul class="dropdown-menu dropdown-menu-se">
+                    <li><a class="dropdown-item" href="#url">Download ZIP</a></li>
+                    <li><a class="dropdown-item" href="#url">NodeJS Application</a></li>
+                    <li><a class="dropdown-item" href="#url">Spreadsheet</a></li>
+                </ul>
+            </details>
+        </div>            
         <div class="d-flex flex-justify-end position-relative">
             <details class="details-reset details-overlay">
                 <summary class="btn btn-primary btn-sm " aria-haspopup="true">
@@ -114,7 +128,7 @@
             <octicons-history size="16" class="mr-1"></octicons-history>
             <span class="mr-4"> 10 commits</span>
             <octicons-people size="16" class="mr-1"></octicons-people>
-            <span class="mr-2"> 1 contributor</span>
+            <span> 1 contributor</span>
         </div>
         <ul>
             <li *ngFor="let shFolder of objectList.shFolders" class="Box-row">
