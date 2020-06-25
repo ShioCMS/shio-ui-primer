@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrimerDropdownItemComponent } from './primer-dropdown-item.component';
+import { PrimerDropdownItem } from './primer-dropdown-item.component';
 
-describe('PrimerDropdownItemComponent', () => {
-  let component: PrimerDropdownItemComponent;
-  let fixture: ComponentFixture<PrimerDropdownItemComponent>;
+describe('PrimerDropdownItem', () => {
+  let component: PrimerDropdownItem;
+  let fixture: ComponentFixture<PrimerDropdownItem>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrimerDropdownItemComponent ]
+      declarations: [ PrimerDropdownItem ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrimerDropdownItemComponent);
+    fixture = TestBed.createComponent(PrimerDropdownItem);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

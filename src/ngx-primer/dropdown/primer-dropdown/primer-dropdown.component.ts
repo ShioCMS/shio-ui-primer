@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-primer-dropdown',
+  selector: 'primer-dropdown',
   templateUrl: './primer-dropdown.component.html',
   styleUrls: ['./primer-dropdown.component.scss']
 })
-export class PrimerDropdownComponent implements OnInit {
+export class PrimerDropdown implements OnInit {
+  @Input() defaultOpen: boolean;
+  @Input() overlay: boolean = false;
+  @Input() open: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
+  public onToggle() {
+
+  }
+  public onClickOutside() {
+
+  }
 }

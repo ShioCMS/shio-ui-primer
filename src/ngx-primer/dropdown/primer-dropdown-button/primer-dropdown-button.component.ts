@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-primer-dropdown-button',
+  selector: 'primer-dropdown-button',
   templateUrl: './primer-dropdown-button.component.html',
   styleUrls: ['./primer-dropdown-button.component.scss']
 })
-export class PrimerDropdownButtonComponent implements OnInit {
+export class PrimerDropdownButton implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  public onClick() {
+    
   }
 
 }

@@ -35,6 +35,7 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ShioPostTabComponent } from './component/shio-post-tab/shio-post-tab.component';
 import { OcticonsRepository, OcticonsPencil, OcticonsGear, OcticonsFileDirectory, OcticonsNote, OcticonsWorkflow, OcticonsPackage, OcticonsCode, OcticonsPeople, OcticonsHistory, OcticonsEye, OcticonsDownload, OcticonsPlus, OcticonsUpload, OcticonsCopy } from 'src/octicons';
+import { PrimerDropdown, PrimerDropdownButton, PrimerDropdownMenu, PrimerDropdownItem } from 'src/ngx-primer/dropdown';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -76,7 +77,11 @@ registerLocaleData(localePt, 'pt');
     ShioSitePageComponent,
     ShioPostSettingsPageComponent,
     ShioPostTabsComponent,
-    ShioPostTabComponent
+    ShioPostTabComponent,
+    PrimerDropdown,
+    PrimerDropdownButton,
+    PrimerDropdownMenu,
+    PrimerDropdownItem
   ],
   imports: [
     BrowserModule,
