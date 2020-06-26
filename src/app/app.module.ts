@@ -35,7 +35,6 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ShioPostTabComponent } from './component/shio-post-tab/shio-post-tab.component';
 import { OcticonsRepository, OcticonsPencil, OcticonsGear, OcticonsFileDirectory, OcticonsNote, OcticonsWorkflow, OcticonsPackage, OcticonsCode, OcticonsPeople, OcticonsHistory, OcticonsEye, OcticonsDownload, OcticonsPlus, OcticonsUpload, OcticonsCopy } from 'src/octicons';
-import { PrimerDropdown, PrimerDropdownButton, PrimerDropdownMenu, PrimerDropdownItem } from 'src/ngx-primer/dropdown';
 import { NotifierModule, NotifierOptions } from "angular-notifier";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
@@ -122,10 +121,6 @@ const notifierDefaultOptions: NotifierOptions = {
     ShioPostSettingsPageComponent,
     ShioPostTabsComponent,
     ShioPostTabComponent,
-    PrimerDropdown,
-    PrimerDropdownButton,
-    PrimerDropdownMenu,
-    PrimerDropdownItem,
     IdenticonHashDirective
   ],
   imports: [
