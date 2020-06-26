@@ -39,6 +39,7 @@ import { PrimerDropdown, PrimerDropdownButton, PrimerDropdownMenu, PrimerDropdow
 import { NotifierModule, NotifierOptions } from "angular-notifier";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { IdenticonHashDirective } from './identicon-hash.directive';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -124,7 +125,8 @@ const notifierDefaultOptions: NotifierOptions = {
     PrimerDropdown,
     PrimerDropdownButton,
     PrimerDropdownMenu,
-    PrimerDropdownItem
+    PrimerDropdownItem,
+    IdenticonHashDirective
   ],
   imports: [
     BrowserModule,

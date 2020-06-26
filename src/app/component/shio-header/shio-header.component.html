@@ -29,9 +29,10 @@
     <div class="Header-item position-relative mr-0 d-none d-lg-flex">
         <details *ngIf="(user | async) as userItem" class="details-overlay details-reset">
             <summary class="Header-link" aria-haspopup="true" style="outline:none;">
-                <div class="CircleBadge CircleBadge--small float-left"
-                    style="width: 32px; height: 32px;background-color: gray;margin-right: 7px;">
-                    {{userItem.firstName.charAt(0)}}{{userItem.lastName.charAt(0)}}
+                <div style="background-color: whitesmoke;width: 32px;height: 32px;margin-right: 7px;border-radius: 50%;" class="float-left">
+                <svg width="32" height="32" style="border-radius: 50%;" [identiconHash]="userItem.username">
+                    Avatar
+                  </svg>
                 </div>
                 <div class="dropdown-caret" style="margin-top: 17px;padding-bottom: 10px;padding-top: 1px;"></div>
             </summary>
