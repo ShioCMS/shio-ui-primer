@@ -1,4 +1,4 @@
-[![Twitter](https://img.shields.io/twitter/follow/shiocms.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=shiocms)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ShioCMS_shio-ui-primer&metric=alert_status)](https://sonarcloud.io/dashboard?id=ShioCMS_shio-ui-primer) [![Twitter](https://img.shields.io/twitter/follow/shiocms.svg?style=social&label=Follow)](https://twitter.com/intent/follow?screen_name=shiocms)
 
 # Shio CMS user interface using Primer CSS
 
