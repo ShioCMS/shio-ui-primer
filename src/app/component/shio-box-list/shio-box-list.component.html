@@ -111,7 +111,8 @@
         <div class="Box-header d-flex flex-items-center">
             <div style="background-color: whitesmoke;width: 24px;height: 24px;margin-right: 7px;border-radius: 50%;"
                 class="float-left">
-                <svg width="24" height="24" style="border-radius: 50%;" [identiconHash]="objectList.shSite.name | lowercase">
+                <svg width="24" height="24" style="border-radius: 50%;"
+                    [identiconHash]="objectList.shSite.name | lowercase">
                     Avatar
                 </svg>
             </div>
@@ -135,10 +136,15 @@
                 </nav>
             </div>
             <div>
+
                 <span title="Label: green outline label"
                     class="Label Label--outline Label--outline-green mr-3">Published</span>
-                <details class="dropdown details-reset details-overlay d-inline-block mr-1">
-                    <summary class="btn btn-sm" aria-haspopup="true">
+                <button class="btn-link btn-sm mr-3" style="color: #24292e;">
+                    <octicons-history [size]="16"></octicons-history>
+                    History
+                </button>
+                <details class="dropdown details-reset details-overlay d-inline-block mr-3">
+                    <summary class="btn-link btn-sm" aria-haspopup="true" style="color: #24292e;">
                         Order
                         <div class="dropdown-caret"></div>
                     </summary>
@@ -149,7 +155,7 @@
                         <li><a class="dropdown-item" href="#url" i18n="@@date">Date</a></li>
                     </ul>
                 </details>
-                <button class="btn btn-sm">
+                <button class="btn-link btn-sm" style="color: #24292e;">
                     <fa-icon [icon]="faBars"></fa-icon>
                 </button>
             </div>
