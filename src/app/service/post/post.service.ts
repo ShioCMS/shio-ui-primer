@@ -36,21 +36,8 @@ export class ShPostService {
     getBreadcrumb(id: string): Observable<BreadcrumbData> {
         return this.httpClient.get<BreadcrumbData>(`${environment.apiUrl}/api/v2/folder/${id}/path`)
     }
-    public savePost(shPost: ShPostData): boolean {
-        this.httpClient.put(`${environment.apiUrl}/api/v2/post/${shPost.id}`,
-            JSON.stringify(shPost))
-            .subscribe(
-                (val) => {
-                    console.log('POST call successful value returned in body',
-                        val);
-                    return true;
-                },
-                response => {
-                    console.log('POST call in error', response);
-                },
-                () => {
-                    console.log('The POST observable is now completed.');
-                });
-        return false;
+    public savePost(shPost: ShPostData): Observable<Object> {        
+        return this.httpClient.put(`${environment.apiUrl}/api/v2/post/${shPost.id}`,
+        JSON.stringify(shPost));
     }
 }

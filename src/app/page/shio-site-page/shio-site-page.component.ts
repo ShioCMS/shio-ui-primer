@@ -3,7 +3,7 @@ import 'brace/theme/eclipse';
 import 'brace/mode/json';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { ShSiteService } from '@app/service/site/site.service';
 import { ShSiteData } from '@app/data/site/site.data';
 import { AceConfigInterface } from 'ngx-ace-wrapper';
@@ -37,16 +37,16 @@ export class ShioSitePageComponent implements OnInit {
 
   public saveSite(_shSite: ShSiteData) {
     this.shSiteService.save(_shSite).subscribe(
-      (val) => {
-          this.notifier.notify("success", "Repository settings was updated.");
-          return true;
+      (shSite: ShSiteData) => {
+        _shSite = shSite;
+        this.notifier.notify("success", shSite.name.concat(" Repository settings was updated."));
       },
       response => {
         this.notifier.notify("error", "Repository settings was error: " + response);
       },
       () => {
-         // console.log('The POST observable is now completed.');
+        // console.log('The POST observable is now completed.');
       });
-    
+
   }
 }

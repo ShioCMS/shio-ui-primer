@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ShPostService } from '@app/service/post/post.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ShPostData } from '@app/data/post/post.data';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'shio-post-tabs',
@@ -16,7 +17,7 @@ export class ShioPostTabsComponent implements OnInit {
   private breacrumbData: Observable<BreadcrumbData>;
   private id: string;
   tabs: any[] = [];
-  constructor(private shPostService: ShPostService, private route: ActivatedRoute, private router: Router) {
+  constructor(private readonly notifier: NotifierService, private shPostService: ShPostService, private route: ActivatedRoute, private router: Router) {
     this.id = this.route.snapshot.paramMap.get('id');
     this.breacrumbData = this.shPostService.getBreadcrumb(this.id);
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -27,8 +28,12 @@ export class ShioPostTabsComponent implements OnInit {
     return this.breacrumbData;
   }
   ngOnInit(): void {
+    this.formatPost(this.shPost);
+  }
+  private formatPost(shPost: ShPostData) {
+    this.tabs = [];
     let currentTabIndex: number = 0;
-    this.shPost.shPostAttrs.sort((a,b) => a.shPostTypeAttr.ordinal - b.shPostTypeAttr.ordinal).forEach((shPostAttr, index) => {
+    shPost.shPostAttrs.sort((a, b) => a.shPostTypeAttr.ordinal - b.shPostTypeAttr.ordinal).forEach((shPostAttr, index) => {
       let tabName = this.shPost.shPostType.title;
       if (shPostAttr.shPostTypeAttr.shWidget.name === 'Tab') {
         tabName = shPostAttr.shPostTypeAttr.label;
@@ -47,6 +52,18 @@ export class ShioPostTabsComponent implements OnInit {
     });
   }
   public savePost() {
-    this.shPostService.savePost(this.shPost);
+    this.shPostService.savePost(this.shPost).subscribe(
+      (shPost: ShPostData) => {
+        this.shPost = shPost;
+        this.formatPost(this.shPost);
+        this.notifier.notify("success", shPost.title.concat(" Post was updated."));
+      },
+      response => {
+        this.notifier.notify("error", "Repository settings was error: " + response);
+      },
+      () => {
+        // console.log('The POST observable is now completed.');
+      });
+    ;
   }
 }
