@@ -2,7 +2,11 @@
 
 # Shio CMS user interface using Primer CSS
 
-![shio-primer.png](https://shiocms.github.io/shio-ui-primer/img/shio-primer.png) 
+![screen01.png](https://shiocms.github.io/shio-ui-primer/img/screen01.png) 
+
+![screen02.png](https://shiocms.github.io/shio-ui-primer/img/screen02.png) 
+
+![screen03.png](https://shiocms.github.io/shio-ui-primer/img/screen03.png)
 
 **If you'd like to contribute to Shio CMS UI Primer, be sure to review the [contribution
 guidelines](CONTRIBUTING.md).**

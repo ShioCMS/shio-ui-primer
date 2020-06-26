@@ -1,6 +1,11 @@
 <div *ngIf="(getBreadcrumb() | async) as breadcrumb"
     class="d-flex flex-items-center overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light mt-3">
-    <octicons-note size="16" class="mr-2" style="fill:gray"></octicons-note>
+    <div style="background-color: whitesmoke;width: 32px;height: 32px;border-radius: 50%;"
+        class="float-left">
+        <svg width="32" height="32" style="border-radius: 50%;" [identiconHash]="shPost.shSite.name | lowercase">
+            Avatar
+        </svg>
+    </div>
     <div class=" overflow-hidden flex-auto" style="font-size: larger;font-weight: 500;">
 
         <nav aria-label="Breadcrumb">
