@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-shio-post-settings-page',
-  templateUrl: './shio-post-settings-page.component.html',
-  styleUrls: ['./shio-post-settings-page.component.scss']
+  templateUrl: './shio-post-settings-page.component.html'
 })
 export class ShioPostSettingsPageComponent implements OnInit {
 

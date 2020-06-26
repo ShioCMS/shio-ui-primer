@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShioObjectListComponent } from './shio-object-list.component';;
+import { ShioObjectListComponent } from './shio-object-list.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterModule } from '@angular/router';
 import { ShObjectService } from 'src/app/service/object/object.service';

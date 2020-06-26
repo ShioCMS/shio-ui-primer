@@ -10,8 +10,6 @@ export class BasicAuthInterceptor implements HttpInterceptor {
     constructor(private authenticationService: AuthenticationService, private xsrfTokenExtractor: HttpXsrfTokenExtractor) { }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        // add header with basic auth credentials if user is logged in and request is to the api url
-        const xsrfToken = this.xsrfTokenExtractor.getToken();
         const user = this.authenticationService.userValue;
         const isLoggedIn = user && user.authdata;
         const isApiUrl = request.url.startsWith(environment.apiUrl);

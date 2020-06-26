@@ -5,5 +5,10 @@ module.exports = {
           /brace\//,
         ]
       },
-    },
+      '@ckeditor/ckeditor5-angular': {
+        ignorableDeepImportMatchers: [
+          /@ckeditor\//,
+        ]
+      }
+    }
   };

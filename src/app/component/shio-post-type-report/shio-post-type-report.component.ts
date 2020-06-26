@@ -6,8 +6,7 @@ import { ShSiteData } from 'src/app/data/site/site.data';
 
 @Component({
   selector: 'shio-post-type-report',
-  templateUrl: './shio-post-type-report.component.html',
-  styleUrls: ['./shio-post-type-report.component.scss']
+  templateUrl: './shio-post-type-report.component.html'
 })
 export class ShioPostTypeReportComponent implements OnInit {
   @Input() shSite: ShSiteData;

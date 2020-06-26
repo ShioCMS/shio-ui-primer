@@ -5,8 +5,7 @@ import { UserService, AuthenticationService } from '@app/_services';
 
 @Component({
   selector: 'shio-header',
-  templateUrl: './shio-header.component.html',
-  styleUrls: ['./shio-header.component.scss']
+  templateUrl: './shio-header.component.html'
 })
 export class ShioHeaderComponent implements OnInit {
 

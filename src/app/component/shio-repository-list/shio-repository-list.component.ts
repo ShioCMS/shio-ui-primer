@@ -3,8 +3,7 @@ import { ShSiteData } from '../../data/site/site.data';
 
 @Component({
   selector: 'shio-repository-list',
-  templateUrl: './shio-repository-list.component.html',
-  styleUrls: ['./shio-repository-list.component.scss']
+  templateUrl: './shio-repository-list.component.html'
 })
 export class ShioRepositoryListComponent implements OnInit {
   @Input() shSites: ShSiteData[];

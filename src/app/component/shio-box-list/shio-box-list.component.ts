@@ -5,8 +5,7 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NgxSmartModalService } from 'ngx-smart-modal';
 @Component({
   selector: 'shio-box-list',
-  templateUrl: './shio-box-list.component.html',
-  styleUrls: ['./shio-box-list.component.scss']
+  templateUrl: './shio-box-list.component.html'
 })
 export class ShioBoxListComponent implements OnInit {
   @Input() objectList: ShObjectData;

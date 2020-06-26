@@ -8,8 +8,7 @@ import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'shio-post-tabs',
-  templateUrl: './shio-post-tabs.component.html',
-  styleUrls: ['./shio-post-tabs.component.scss']
+  templateUrl: './shio-post-tabs.component.html'
 })
 export class ShioPostTabsComponent implements OnInit {
   @Input() shPost: ShPostData;
@@ -62,8 +61,7 @@ export class ShioPostTabsComponent implements OnInit {
         this.notifier.notify("error", "Repository settings was error: " + response);
       },
       () => {
-        // console.log('The POST observable is now completed.');
+        // The POST observable is now completed
       });
-    ;
   }
 }
