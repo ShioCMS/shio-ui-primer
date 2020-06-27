@@ -10,6 +10,7 @@ import { PostTypeListComponent } from './page/post-type-list/post-type-list.comp
 import { ApiPlaygroundComponent } from './page/api-playground/api-playground.component';
 import { ShioSitePageComponent } from './page/shio-site-page/shio-site-page.component';
 import { ShioPostSettingsPageComponent } from './page/shio-post-settings-page/shio-post-settings-page.component';
+import { ShioCommitPageComponent } from './page/shio-commit-page/shio-commit-page.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
     { path: 'modeling', component: PostTypeListComponent, canActivate: [AuthGuard] },
     { path: 'playground', component: ApiPlaygroundComponent, canActivate: [AuthGuard] },
     { path: 'site/:id', component: ShioSitePageComponent, canActivate: [AuthGuard] },
-    { path: '', redirectTo: '/content/dashboard', pathMatch: 'full', canActivate: [AuthGuard] }
+    { path: 'commit/:id', component: ShioCommitPageComponent, canActivate: [AuthGuard] },
+    { path: '', redirectTo: '/content/dashboard', pathMatch: 'full', canActivate: [AuthGuard] }    
     ]
   },
   { path: '', redirectTo: '/content/dashboard', pathMatch: 'full', canActivate: [AuthGuard] },

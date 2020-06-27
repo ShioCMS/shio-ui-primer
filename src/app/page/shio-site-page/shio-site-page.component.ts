@@ -21,7 +21,7 @@ export class ShioSitePageComponent implements OnInit {
   };
   private shSite: Observable<ShSiteData>;
 
-  constructor(private readonly notifier: NotifierService, private shSiteService: ShSiteService, private route: ActivatedRoute, private router: Router) {
+  constructor(private readonly notifier: NotifierService, private shSiteService: ShSiteService, private route: ActivatedRoute) {
     let id = this.route.snapshot.paramMap.get('id');
     this.shSite = this.shSiteService.get(id);
   }

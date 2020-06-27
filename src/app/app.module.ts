@@ -38,7 +38,9 @@ import { OcticonsRepository, OcticonsPencil, OcticonsGear, OcticonsFileDirectory
 import { NotifierModule, NotifierOptions } from "angular-notifier";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
-import { IdenticonHashDirective } from './identicon-hash.directive';
+import { IdenticonHashDirective } from './directive/identicon-hash.directive';
+import { ShioCommitPageComponent } from './page/shio-commit-page/shio-commit-page.component';
+import { ShHistoryService } from './service/history/history.service';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -121,7 +123,8 @@ const notifierDefaultOptions: NotifierOptions = {
     ShioPostSettingsPageComponent,
     ShioPostTabsComponent,
     ShioPostTabComponent,
-    IdenticonHashDirective
+    IdenticonHashDirective,
+    ShioCommitPageComponent
   ],
   imports: [
     BrowserModule,
@@ -142,7 +145,7 @@ const notifierDefaultOptions: NotifierOptions = {
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: ACE_CONFIG, useValue: DEFAULT_ACE_CONFIG },
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' },
-    ShSiteService, ShObjectService, ShPostService
+    ShSiteService, ShObjectService, ShPostService, ShHistoryService
   ],
   bootstrap: [AppComponent]
 })

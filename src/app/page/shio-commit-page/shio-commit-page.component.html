@@ -1,0 +1,43 @@
+<div *ngIf="(getShSite() | async) as shSite; else loading">
+    <shio-repository-tabs [shSite]="shSite" [tabIndex]="1"></shio-repository-tabs>
+    <div *ngIf="(getShHistories() | async) as shHistories; else loading"
+        class="container-xl clearfix px-3 px-md-4 px-lg-5 mt-4">
+        <div class="TimelineItem TimelineItem--condensed">
+            <div class="TimelineItem-badge">
+                <svg class="octicon octicon-git-commit" viewBox="0 0 14 16" version="1.1" width="14" height="16"
+                    aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M10.86 7c-.45-1.72-2-3-3.86-3-1.86 0-3.41 1.28-3.86 3H0v2h3.14c.45 1.72 2 3 3.86 3 1.86 0 3.41-1.28 3.86-3H14V7h-3.14zM7 10.2c-1.22 0-2.2-.98-2.2-2.2 0-1.22.98-2.2 2.2-2.2 1.22 0 2.2.98 2.2 2.2 0 1.22-.98 2.2-2.2 2.2z">
+                    </path>
+                </svg>
+            </div>
+            <div class="TimelineItem-body">
+                Commits on {{today | date}}
+                <div class="Box mt-2">
+                    <ul>
+                        <li *ngFor="let shHistory of shHistories" class="Box-row">
+                            <p class="h5 mb-1 text-gray-dark ">
+                                <a style="color: #24292e;" href="#">{{shHistory.description}}</a>
+                            </p>
+                            <div class="d-flex flex-items-center">
+
+                                <svg width="20" height="20" class="mr-1" style="border-radius: 50%;"
+                                    [identiconHash]="shHistory.owner | lowercase">
+                                    {{shHistory.owner}}
+                                </svg>
+                                <div class="f6 text-gray min-width-0">
+                                    <span
+                                        style="font-weight: 600;color: #24292e;white-space: nowrap;">{{shHistory.owner}}</span>
+                                    committed {{shHistory.date | amTimeAgo}}
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+    <span>Loading</span><span class="AnimatedEllipsis"></span>
+</ng-template>

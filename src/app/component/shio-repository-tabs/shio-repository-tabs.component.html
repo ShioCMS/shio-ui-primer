@@ -9,11 +9,11 @@
     <div class="float-right d-flex flex-items-center">
       <span title="Label: green outline label" class="Label Label--outline Label--outline-green mr-3">Published</span>
       <div class="mr-2">
-        <button class="btn btn-sm btn-with-count" href="#url" role="button">
+        <a [routerLink]="['/content/commit', shSite.id]" class="btn btn-sm btn-with-count" href="#url" role="button">
           <octicons-history [size]="16" class="mr-1"></octicons-history>
           <span>Commit</span>
-        </button>
-        <button class="social-count" href="#url">6</button>
+        </a>
+        <a [routerLink]="['/content/commit', shSite.id]" class="social-count">{{getCommitCount() | async}}</a>
       </div>
       <div class="mr-2">
         <button class="btn btn-sm btn-with-count" href="#url" role="button">
