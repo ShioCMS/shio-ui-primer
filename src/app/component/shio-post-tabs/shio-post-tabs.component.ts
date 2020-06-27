@@ -32,21 +32,21 @@ export class ShioPostTabsComponent implements OnInit {
   private formatPost(shPost: ShPostData) {
     this.tabs = [];
     let currentTabIndex: number = 0;
-    shPost.shPostAttrs.sort((a, b) => a.shPostTypeAttr.ordinal - b.shPostTypeAttr.ordinal).forEach((shPostAttr, index) => {
+    let shPostAttrsSort = shPost.shPostAttrs.sort((a, b) => a.shPostTypeAttr.ordinal - b.shPostTypeAttr.ordinal);
+
+    shPostAttrsSort.forEach((shPostAttr, index) => {
       let tabName = this.shPost.shPostType.title;
+
       if (shPostAttr.shPostTypeAttr.shWidget.name === 'Tab') {
         tabName = shPostAttr.shPostTypeAttr.label;
         currentTabIndex = index;
-        this.tabs.push({
-          ordinal: index,
-          name: shPostAttr.shPostTypeAttr.label
-        });
-      } else if (index === 0) {
-        this.tabs.push({
-          ordinal: index,
-          name: tabName
-        });
       }
+
+      this.tabs.push({
+        ordinal: index,
+        name: tabName
+      });
+
       shPostAttr.tab = currentTabIndex;
     });
   }
