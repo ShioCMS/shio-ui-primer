@@ -2,7 +2,7 @@ import 'brace';
 import 'brace/theme/eclipse';
 import 'brace/mode/json';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ShSiteService } from '@app/service/site/site.service';
 import { ShSiteData } from '@app/data/site/site.data';
