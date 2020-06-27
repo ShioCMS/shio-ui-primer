@@ -41,6 +41,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { IdenticonHashDirective } from './directive/identicon-hash.directive';
 import { ShioCommitPageComponent } from './page/shio-commit-page/shio-commit-page.component';
 import { ShHistoryService } from './service/history/history.service';
+import { OcticonsClock } from 'src/octicons/clock/octicons-clock.component';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -110,6 +111,7 @@ const notifierDefaultOptions: NotifierOptions = {
     OcticonsEye,
     OcticonsDownload,
     OcticonsPlus,
+    OcticonsClock,
     ShioBoxListComponent,
     ShioRepositoryAboutComponent,
     ShioPostTypeReportComponent,

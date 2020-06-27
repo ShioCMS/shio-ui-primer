@@ -227,7 +227,11 @@
                         </div>
                     </details>
                 </div>
-                <span style="color: rgba(27, 31, 35, 0.6);font-size: smaller;">{{shFolder.date | amTimeAgo}}</span>
+                <div class="d-flex flex-items-center mt-1" style="color: rgba(27, 31, 35, 0.6);">
+                    <octicons-clock [size]="16" class="mr-1"></octicons-clock>
+                    <span style="font-size: smaller;"> Updated
+                        {{shFolder.date | amTimeAgo}}</span>
+                </div>
                 <div style="margin-top: 10px;">
                     <div class="d-flex flex-items-center">
                         <span title="This folder is published"
@@ -307,8 +311,14 @@
                         </div>
                     </details>
                 </div>
-                <span style="color: rgba(27, 31, 35, 0.6);font-size: smaller;">{{shPost.date | amTimeAgo}}
-                    <span *ngIf="shPost.summary !== null"> - </span> {{shPost.summary}}</span>
+                <div class="d-flex flex-items-center mt-1" style="color: rgba(27, 31, 35, 0.6);">
+                    <octicons-clock [size]="16" class="mr-1"></octicons-clock>
+                    <span>
+                        <span style="font-size: smaller;"> Updated
+                            {{shPost.date | amTimeAgo}}</span>
+                        <span *ngIf="shPost.summary !== null"> - </span> {{shPost.summary}}</span>
+                </div>
+
                 <div style="margin-top: 15px;">
                     <div class="d-flex flex-items-center">
                         <span title="This post is published"

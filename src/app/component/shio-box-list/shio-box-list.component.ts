@@ -3,6 +3,7 @@ import { ShObjectData } from 'src/app/data/object/object.data';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+
 @Component({
   selector: 'shio-box-list',
   templateUrl: './shio-box-list.component.html'
