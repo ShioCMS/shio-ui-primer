@@ -2,7 +2,7 @@
     <shio-repository-tabs [shSite]="shSite" [tabIndex]="1"></shio-repository-tabs>
     <div *ngIf="(getShHistories() | async) as shHistories; else loading"
         class="container-xl clearfix px-3 px-md-4 px-lg-5 mt-4">
-        <div class="TimelineItem TimelineItem--condensed">
+        <div *ngFor="let dayItem of historyGroupBy"  class="TimelineItem TimelineItem--condensed">
             <div class="TimelineItem-badge">
                 <svg class="octicon octicon-git-commit" viewBox="0 0 14 16" version="1.1" width="14" height="16"
                     aria-hidden="true">
@@ -12,10 +12,10 @@
                 </svg>
             </div>
             <div class="TimelineItem-body">
-                Commits on {{today | date}}
+                Commits on {{dayItem.day | date}}
                 <div class="Box mt-2">
                     <ul>
-                        <li *ngFor="let shHistory of shHistories" class="Box-row">
+                        <li *ngFor="let shHistory of dayItem.histories" class="Box-row">
                             <p class="h5 mb-1 text-gray-dark ">
                                 <a style="color: #24292e;" href="#">{{shHistory.description}}</a>
                             </p>
@@ -35,7 +35,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>     
     </div>
 </div>
 <ng-template #loading>
