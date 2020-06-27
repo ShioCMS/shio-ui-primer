@@ -47,13 +47,13 @@ export class ShioCommitPageComponent implements OnInit {
       (rv[x[key]] = rv[x[key]] || []).push(x);
       return rv;
     }, {});
-    let list = [];
-    Object.entries(reduce).forEach((key) => {
-      let groupByDay: any = {};
-      groupByDay.day = new Date(key[0]);
-      groupByDay.histories = key[1];
-      list.push(groupByDay);
+    let groupByDay = [];
+    Object.entries(reduce).forEach((itemByDay) => {
+      groupByDay.push({
+        day: new Date(itemByDay[0]),
+        histories: itemByDay[1]
+      });
     });
-    return list;
+    return groupByDay;
   }
 }
