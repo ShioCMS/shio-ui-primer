@@ -12,6 +12,8 @@
 
 ![screen05.png](https://shiocms.github.io/shio-ui-primer/img/screen05.png)
 
+![screen06.png](https://shiocms.github.io/shio-ui-primer/img/screen06.png)
+
 **If you'd like to contribute to Shio CMS UI Primer, be sure to review the [contribution
 guidelines](CONTRIBUTING.md).**
 
