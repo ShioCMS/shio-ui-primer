@@ -44,6 +44,7 @@ import { OcticonsClock } from 'src/octicons/clock/octicons-clock.component';
 import { ShioPostTypeListComponent } from './component/shio-post-type-list/shio-post-type-list.component';
 import { ShioModelingPageComponent } from './page/shio-modeling-page/shio-modeling-page.component';
 import { ShioObjectActionsComponent } from './component/shio-object-actions/shio-object-actions.component';
+import { ShioRepositoryPageComponent } from './page/shio-repository-page/shio-repository-page.component';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -130,7 +131,8 @@ const notifierDefaultOptions: NotifierOptions = {
     ShioCommitPageComponent,
     ShioPostTypeListComponent,
     ShioModelingPageComponent,
-    ShioObjectActionsComponent
+    ShioObjectActionsComponent,
+    ShioRepositoryPageComponent
   ],
   imports: [
     BrowserModule,
