@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   orderProp: string;
   loading = false;
   user: Observable<User>;
-  constructor(private userService: UserService, site: ShSiteService) {
+  constructor(private userService: UserService, private site: ShSiteService) {
     site.query().subscribe(sites => {
       this.sites = sites;
     });

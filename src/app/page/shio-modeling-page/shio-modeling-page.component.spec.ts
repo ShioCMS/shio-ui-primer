@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PostTypeListComponent } from './post-type-list.component';
+import { ShioModelingPageComponent } from './shio-modeling-page.component';
 
-describe('PostTypeListComponent', () => {
-  let component: PostTypeListComponent;
-  let fixture: ComponentFixture<PostTypeListComponent>;
+describe('ShioModelingPageComponent', () => {
+  let component: ShioModelingPageComponent;
+  let fixture: ComponentFixture<ShioModelingPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostTypeListComponent ]
+      declarations: [ ShioModelingPageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostTypeListComponent);
+    fixture = TestBed.createComponent(ShioModelingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

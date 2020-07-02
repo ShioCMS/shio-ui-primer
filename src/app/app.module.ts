@@ -14,7 +14,6 @@ import { ShioBoxListComponent } from './component/shio-box-list/shio-box-list.co
 import { ShioObjectListComponent } from './page/shio-object-list/shio-object-list.component';
 import { AppComponent } from './page/app/app.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
-import { PostTypeListComponent } from './page/post-type-list/post-type-list.component';
 import { ApiPlaygroundComponent } from './page/api-playground/api-playground.component';
 import { PostComponent } from './page/post/post.component';
 import localeEn from '@angular/common/locales/en';
@@ -42,6 +41,8 @@ import { IdenticonHashDirective } from './directive/identicon-hash.directive';
 import { ShioCommitPageComponent } from './page/shio-commit-page/shio-commit-page.component';
 import { ShHistoryService } from './service/history/history.service';
 import { OcticonsClock } from 'src/octicons/clock/octicons-clock.component';
+import { ShioPostTypeListComponent } from './component/shio-post-type-list/shio-post-type-list.component';
+import { ShioModelingPageComponent } from './page/shio-modeling-page/shio-modeling-page.component';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -93,7 +94,6 @@ const notifierDefaultOptions: NotifierOptions = {
     AppComponent,
     DashboardComponent,
     ShioObjectListComponent,
-    PostTypeListComponent,
     ApiPlaygroundComponent,
     PostComponent,
     OcticonsRepository,
@@ -126,7 +126,9 @@ const notifierDefaultOptions: NotifierOptions = {
     ShioPostTabsComponent,
     ShioPostTabComponent,
     IdenticonHashDirective,
-    ShioCommitPageComponent
+    ShioCommitPageComponent,
+    ShioPostTypeListComponent,
+    ShioModelingPageComponent
   ],
   imports: [
     BrowserModule,
