@@ -17,10 +17,18 @@ export class ShioModelingPageComponent implements OnInit {
   user: Observable<User>;
   constructor(private userService: UserService, private postTypeService: ShPostTypeService) {
     postTypeService.query().subscribe(postTypes => {
-      this.postTypes = postTypes;
+      this.postTypes = postTypes.sort((a, b) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (b.title < a.title) {
+          return 1;
+        }
+        return 0;
+      })
     });
     this.orderProp = 'name';
-  
+
   }
   getPostTypes(): ShPostTypeData[] {
     return this.postTypes;
