@@ -4,6 +4,7 @@ import { ShSiteService } from 'src/app/service/site/site.service';
 import { User } from '@app/_models';
 import { UserService } from '@app/_services';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html'
@@ -14,7 +15,8 @@ export class DashboardComponent implements OnInit {
   orderProp: string;
   loading = false;
   user: Observable<User>;
-  constructor(private userService: UserService, private site: ShSiteService) {
+  constructor(private userService: UserService, private site: ShSiteService, private router: Router) {
+    
     site.query().subscribe(sites => {
       this.sites = sites;
     });
@@ -28,5 +30,7 @@ export class DashboardComponent implements OnInit {
     this.loading = true;
     this.user = this.userService.getAll();
   }
-
+  getRouter() : Router {
+    return this.router;
+  }
 }

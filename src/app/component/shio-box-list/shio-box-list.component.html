@@ -1,8 +1,8 @@
 <div class="clearfix">
-    <div class="float-left" style="flex: 1 1 auto;width: 50%;">
-        <input class="form-control input-sm" style="width: 100%;" type="text"
-            i18n-placeholder="@@FindObjectCurrentFolder" placeholder="Find an object in the current folder..."
-            aria-label="Find an object in the current folder" />
+    <div class="float-left" style="flex: 1 1 auto;">
+        <input class="form-control input-sm" style="min-width: 250px;" type="text"
+            i18n-placeholder="@@FindObjectCurrentFolder" placeholder="Search this folder..."
+            aria-label="Search this folder..." />
     </div>
     <div class="float-right" style="display: inline-flex;">
         <div>
@@ -75,14 +75,7 @@
                                 <a href class="btn btn-block">
                                     <octicons-upload [size]="16" class="mr-1"></octicons-upload> Upload File
                                 </a>
-                            </div>
-                            <button class="SelectMenu-closeButton" type="button">
-                                <svg width="12" height="16" viewBox="0 0 12 16" class="octicon octicon-x"
-                                    aria-hidden="true">
-                                    <path fill-rule="evenodd"
-                                        d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z" />
-                                </svg>
-                            </button>
+                            </div>                           
                         </header>
                         <form [formGroup]="ptSelectForm" class="SelectMenu-filter">
                             <input class="SelectMenu-input form-control" formControlName="filter" type="text"

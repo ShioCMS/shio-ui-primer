@@ -40,7 +40,7 @@
                 <svg width="24" height="24" style="border-radius: 50%;" [identiconHash]="site.name | lowercase">
                     Avatar
                 </svg>
-            </div><a [routerLink]="['../object-list', site.id]" routerLinkActive="active"
+            </div><a [routerLink]="['/content/object-list', site.id]" routerLinkActive="active"
                     style="font-weight: bolder; font-size: large;">
                     {{site.name}} </a>
                 <div class="text-gray-light" style="margin-top: 5px;">
