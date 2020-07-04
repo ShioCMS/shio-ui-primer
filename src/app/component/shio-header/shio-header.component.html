@@ -14,7 +14,7 @@
                 aria-haspopup="menu" role="button" style="outline:none;">
                 <octicons-plus [size]="16" class="mr-1"></octicons-plus> <span class="dropdown-caret"></span>
             </summary>
-            <details-menu class="dropdown-menu dropdown-menu-sw mt-n2" role="menu">
+            <div class="dropdown-menu dropdown-menu-sw mt-n2" role="menu">
                 <a role="menuitem" class="dropdown-item" href>New repository</a>
                 <a role="menuitem" class="dropdown-item" href>Import repository</a>
                 <div role="none" class="dropdown-divider"></div>
@@ -23,7 +23,7 @@
                 <div role="none" class="dropdown-divider"></div>
                 <a role="menuitem" class="dropdown-item" href>New post type</a>
                 <a role="menuitem" class="dropdown-item" href>Import post type</a>
-            </details-menu>
+            </div>
         </details>
 
     </div>    
@@ -31,7 +31,7 @@
         <details *ngIf="(user | async) as userItem"
             class="details-overlay details-reset">
             <summary class="Header-link" aria-haspopup="menu" role="button" style="outline:none;">
-                <div class="float-left" style="padding-top: 7px;;margin-right: 7px;">
+                <div class="float-left" style="padding-top: 7px;margin-right: 7px;">
                     <div style="background-color: whitesmoke;width: 20px;height: 20px;border-radius: 50%;">
                         <svg width="20" height="20" style="border-radius: 50%;"
                             [identiconHash]="userItem.username | lowercase">

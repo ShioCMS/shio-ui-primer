@@ -1,17 +1,27 @@
 <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light mt-3 mb-2" aria-label="Dashboard Tabs">
     <div class="UnderlineNav-body">
-        <a [routerLink]="['/content/dashboard/repo']" routerLinkActive="active" [class.selected]="getRouter().url === '/content/dashboard/repo'" class="UnderlineNav-item">
-            <octicons-repository size="16" class="mr-1"></octicons-repository> Repository <span class="Counter">2</span>
+        <a [routerLink]="['/content/dashboard/repo']" routerLinkActive="active"
+            [class.selected]="getRouter().url === '/content/dashboard/repo'" class="UnderlineNav-item">
+            <octicons-repository size="16" class="mr-1"
+                [style.color]="getRouter().url === '/content/dashboard/repo'?'':'#959da5'"></octicons-repository>
+            Repository <span class="Counter">2</span>
         </a>
 
         <a href="#url" class="UnderlineNav-item">
-            <octicons-workflow size="16" class="mr-1"></octicons-workflow> Tasks <span class="Counter">10</span>
+            <octicons-workflow size="16" class="mr-1"
+                [style.color]="getRouter().url === '/content/dashboard/workflow'?'':'#959da5'"></octicons-workflow>
+            Tasks <span class="Counter">10</span>
         </a>
-        <a [routerLink]="['/content/dashboard/modeling']" routerLinkActive="active" [class.selected]="getRouter().url === '/content/dashboard/modeling'" class="UnderlineNav-item">
-            <octicons-package size="16" class="mr-1"></octicons-package> Modeling
+        <a [routerLink]="['/content/dashboard/modeling']" routerLinkActive="active"
+            [class.selected]="getRouter().url === '/content/dashboard/modeling'" class="UnderlineNav-item">
+            <octicons-package size="16" class="mr-1"
+                [style.color]="getRouter().url === '/content/dashboard/modeling'?'':'#959da5'"></octicons-package>
+            Modeling
         </a>
         <a href="#url" class="UnderlineNav-item">
-            <octicons-code size="16" class="mr-1"></octicons-code> API Playground
+            <octicons-code size="16" class="mr-1"
+                [style.color]="getRouter().url === '/content/dashboard/playground'?'':'#959da5'"></octicons-code> API
+            Playground
         </a>
     </div>
 </nav>

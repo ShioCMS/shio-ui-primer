@@ -45,6 +45,7 @@ import { ShioPostTypeListComponent } from './component/shio-post-type-list/shio-
 import { ShioModelingPageComponent } from './page/shio-modeling-page/shio-modeling-page.component';
 import { ShioObjectActionsComponent } from './component/shio-object-actions/shio-object-actions.component';
 import { ShioRepositoryPageComponent } from './page/shio-repository-page/shio-repository-page.component';
+import { ShioPostTypePageComponent } from './page/shio-post-type-page/shio-post-type-page.component';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -132,7 +133,8 @@ const notifierDefaultOptions: NotifierOptions = {
     ShioPostTypeListComponent,
     ShioModelingPageComponent,
     ShioObjectActionsComponent,
-    ShioRepositoryPageComponent
+    ShioRepositoryPageComponent,
+    ShioPostTypePageComponent
   ],
   imports: [
     BrowserModule,

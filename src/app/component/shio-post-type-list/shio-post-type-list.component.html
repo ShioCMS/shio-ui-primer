@@ -39,7 +39,7 @@
                         [identiconHash]="shPostType.name | lowercase">
                         Avatar
                     </svg>
-                </div><a [routerLink]="['../object-list', shPostType.id]" routerLinkActive="active"
+                </div><a [routerLink]="['/content/post-type', shPostType.id]" routerLinkActive="active"
                     style="font-weight: bolder; font-size: large;">
                     {{shPostType.name}} </a>
                 <div class="text-gray-light" style="margin-top: 5px;">
