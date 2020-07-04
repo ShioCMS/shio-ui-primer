@@ -38,7 +38,7 @@
     "jdenticon": "^2.2.0",
     "moment": "^2.27.0",
     "ngx-ace-wrapper": "^9.0.1",
-    "ngx-moment": "^4.0.1",
+    "ngx-moment": "^5.0.0",
     "ngx-smart-modal": "^7.4.1",
     "rxjs": "~6.5.4",
     "tinymce": "^5.3.2",
