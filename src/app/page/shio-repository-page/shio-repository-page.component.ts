@@ -15,7 +15,7 @@ export class ShioRepositoryPageComponent implements OnInit {
   orderProp: string;
   loading = false;
   user: Observable<User>;
-  constructor(private userService: UserService, private siteService: ShSiteService) {
+  constructor(private userService: UserService, siteService: ShSiteService) {
     siteService.query().subscribe(sites => {
       this.sites = sites;
     });
