@@ -17,14 +17,14 @@
                 </nav>
 
             </div>
-            <button (click)="savePostType()" class="btn btn-sm btn-primary" type="button">Save Changes</button>
+            <button class="btn btn-sm btn-primary" type="button">Save Changes</button>
         </div>
         <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Pos Tabs">
             <div class="UnderlineNav-body">
-                <div (click)="currentTab = 1" href="#" class="UnderlineNav-item selected">
+                <div href="#" class="UnderlineNav-item selected">
                     <octicons-package [size]="16" class="mr-1"></octicons-package> {{postType.title}}
                 </div>
-                <div (click)="currentTab = -1" href="#" class="UnderlineNav-item" [class.selected]="currentTab == -1">
+                <div href="#" class="UnderlineNav-item">
                     <octicons-workflow [size]="16" class="mr-1"></octicons-workflow> Workflow
                 </div>
             </div>
@@ -32,14 +32,121 @@
         <div class="overflow-hidden px-3 px-md-4 px-lg-5 mt-2">
             <div class="form-group">
                 <div class="form-group-header">
-                    <label for="repo-name">Title</label>
+                    <label for="repo-name">Name</label>
                 </div>
                 <div class="form-group-body">
-                    <input class="form-control" type="text" id="repo-name" [(ngModel)]="postType.title"
+                    <input class="form-control" type="text" id="post-type-name" [(ngModel)]="postType.title"
                         style="width: 100%;" />
-                    <p class="note" id="help-text-for-checkbox">
-                        Name of Post Type 
+                    <p class="note">
+                        Name of Post Type
                     </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-header">
+                    <label for="repo-name">Description</label>
+                </div>
+                <div class="form-group-body">
+                    <input class="form-control" type="text" id="post-type-description"
+                        [(ngModel)]="postType.description" style="width: 100%;" />
+                    <p class="note">
+                        Description of Post Type
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-header">
+                    <label for="repo-name">API Name</label>
+                </div>
+                <div class="form-group-body">
+                    <input class="form-control" type="text" id="post-type-api-name" [(ngModel)]="postType.name"
+                        style="width: 100%;" />
+                    <p class="note">
+                        API Name of Post Type
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group-header">
+                    <label for="repo-name">API Plural Name</label>
+                </div>
+                <div class="form-group-body">
+                    <input class="form-control" type="text" id="post-type-api-plural-name"
+                        [(ngModel)]="postType.namePlural" style="width: 100%;" />
+                    <p class="note">
+                        API Plural Name of Post Type
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div *ngFor="let postTypeAttr of postType.shPostTypeAttrs">
+                    <nav class="UnderlineNav overflow-hidden px-3 px-md-4 px-lg-5 bg-gray-light" aria-label="Pos Tabs">
+                        <div class="UnderlineNav-body">
+                            <div href="#" class="UnderlineNav-item selected">
+                                Details
+                            </div>
+                            <div href="#" class="UnderlineNav-item">
+                                Semantic Navigation
+                            </div>
+                        </div>
+                    </nav>
+                    <div>
+                        <div class="form-group">
+                            <div class="form-group-header">
+                                <label for="repo-name">Field Label</label>
+                            </div>
+                            <div class="form-group-body">
+                                <input class="form-control" type="text" id="post-type-attr-name"
+                                    [(ngModel)]="postTypeAttr.label" style="width: 100%;" />
+                                <p class="note">
+                                    This is the name that will appear on the Edit page
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-header">
+                                <label for="repo-name">Field Identifier</label>
+                            </div>
+                            <div class="form-group-body">
+                                <input class="form-control" type="text" id="post-type-attr-id"
+                                    [(ngModel)]="postTypeAttr.name" style="width: 100%;" />
+                                <p class="note">
+                                    One word, no spaces. Bottom dash (_) and dashes (-) are allowed
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-checkbox">
+                            <label for="repo-name"> <input type="checkBox" id="post-type-attr-id"
+                                    [(ngModel)]="postTypeAttr.isTitle" /> Title?</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <label for="repo-name"> <input type="checkBox" id="post-type-attr-id"
+                                    [(ngModel)]="postTypeAttr.isSummary" /> Description?</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <label for="repo-name"> <input type="checkBox" id="post-type-attr-id"
+                                    [(ngModel)]="postTypeAttr.required" /> Required?</label>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group-header">
+                                <label for="repo-name">Field Type</label>
+                            </div>
+                            <div class="form-group-body">
+                                <input class="form-control" type="text" id="post-type-attr-id"
+                                    [(ngModel)]="postTypeAttr.name" style="width: 100%;" />
+                            </div>
+                        </div>
+                        <select class="form-select select-sm" aria-label="Preference" style="width:100%">
+                            <option>Choose an option</option>
+                            <option>Git</option>
+                            <option>Subversion</option>
+                            <option>Social Coding</option>
+                            <option>Beets</option>
+                            <option>Bears</option>
+                            <option>Battlestar Galactica</option>
+                          </select>
+                    </div>
                 </div>
             </div>
         </div>
