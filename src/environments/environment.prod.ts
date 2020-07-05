@@ -1,4 +1,4 @@
 export const environment = {
-  apiUrl: 'https://shio.viglet.net',
+  apiUrl: 'http://localhost:2710',
   production: true
 };

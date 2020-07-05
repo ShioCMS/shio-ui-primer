@@ -46,6 +46,7 @@ import { ShioModelingPageComponent } from './page/shio-modeling-page/shio-modeli
 import { ShioObjectActionsComponent } from './component/shio-object-actions/shio-object-actions.component';
 import { ShioRepositoryPageComponent } from './page/shio-repository-page/shio-repository-page.component';
 import { ShioPostTypePageComponent } from './page/shio-post-type-page/shio-post-type-page.component';
+import { ShioWidgetModule } from 'src/widget/shio-widget.module';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -148,7 +149,8 @@ const notifierDefaultOptions: NotifierOptions = {
     CKEditorModule,
     NotifierModule.withConfig(notifierDefaultOptions),
     FontAwesomeModule,
-    NgxSmartModalModule.forRoot()
+    NgxSmartModalModule.forRoot(),
+    ShioWidgetModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

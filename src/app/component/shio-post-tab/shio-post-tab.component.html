@@ -5,7 +5,9 @@
                 <div class="form-group-header">
                     <label for="example-textarea">{{shPostAttr.shPostTypeAttr.label}}</label>
                 </div>
+                <shio-text-area-widget [(ngModel)]="shPostAttr.strValue"></shio-text-area-widget>                
                 <div class="form-group-body">
+
                     <textarea *ngIf="shPostAttr.shPostTypeAttr.shWidget.name === 'Text Area'" class="form-control"
                         id="example-textarea" [(ngModel)]="shPostAttr.strValue"></textarea>
                     <input
