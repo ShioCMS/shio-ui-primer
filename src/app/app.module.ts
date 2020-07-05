@@ -33,20 +33,19 @@ import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ShioPostTabComponent } from './component/shio-post-tab/shio-post-tab.component';
-import { OcticonsRepository, OcticonsPencil, OcticonsGear, OcticonsFileDirectory, OcticonsNote, OcticonsWorkflow, OcticonsPackage, OcticonsCode, OcticonsPeople, OcticonsHistory, OcticonsEye, OcticonsDownload, OcticonsPlus, OcticonsUpload, OcticonsCopy } from 'src/octicons';
 import { NotifierModule, NotifierOptions } from "angular-notifier";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { IdenticonHashDirective } from './directive/identicon-hash.directive';
 import { ShioCommitPageComponent } from './page/shio-commit-page/shio-commit-page.component';
 import { ShHistoryService } from './service/history/history.service';
-import { OcticonsClock } from 'src/octicons/clock/octicons-clock.component';
 import { ShioPostTypeListComponent } from './component/shio-post-type-list/shio-post-type-list.component';
 import { ShioModelingPageComponent } from './page/shio-modeling-page/shio-modeling-page.component';
 import { ShioObjectActionsComponent } from './component/shio-object-actions/shio-object-actions.component';
 import { ShioRepositoryPageComponent } from './page/shio-repository-page/shio-repository-page.component';
 import { ShioPostTypePageComponent } from './page/shio-post-type-page/shio-post-type-page.component';
 import { ShioWidgetModule } from 'src/widget/shio-widget.module';
+import { OcticonsModule } from 'ngx-octicons';
 
 const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   tabSize: 2
@@ -99,23 +98,7 @@ const notifierDefaultOptions: NotifierOptions = {
     DashboardComponent,
     ShioObjectListComponent,
     ApiPlaygroundComponent,
-    PostComponent,
-    OcticonsRepository,
-    OcticonsPencil,
-    OcticonsGear,
-    OcticonsCopy,
-    OcticonsFileDirectory,
-    OcticonsNote,
-    OcticonsWorkflow,
-    OcticonsPackage,
-    OcticonsCode,
-    OcticonsUpload,
-    OcticonsPeople,
-    OcticonsHistory,
-    OcticonsEye,
-    OcticonsDownload,
-    OcticonsPlus,
-    OcticonsClock,
+    PostComponent,    
     ShioBoxListComponent,
     ShioRepositoryAboutComponent,
     ShioPostTypeReportComponent,
@@ -151,6 +134,7 @@ const notifierDefaultOptions: NotifierOptions = {
     FontAwesomeModule,
     NgxSmartModalModule.forRoot(),
     ShioWidgetModule,
+    OcticonsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

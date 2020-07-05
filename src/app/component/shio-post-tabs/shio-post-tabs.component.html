@@ -28,7 +28,7 @@
     </div>
     <span title="Label: green outline label" class="Label Label--outline Label--outline-green mr-3">Published</span>
     <button class="btn btn-sm mr-2" type="button">
-        <octicons-eye [size]="16" class="mr-1"></octicons-eye>View Page
+        <span octicon="eye" size="16" class="mr-1"></span> View Page
     </button>
     <button class="btn btn-sm mr-1" type="button">Publish</button>
     <button (click)="savePost()" class="btn btn-sm btn-primary" type="button">Save Draft</button>
@@ -38,7 +38,7 @@
         <div (click)="currentTab = tab.ordinal" class="UnderlineNav-item" *ngFor="let tab of tabs"
             [class.selected]="currentTab == tab.ordinal">{{tab.name}}</div>
         <div (click)="currentTab = -1" href="#" class="UnderlineNav-item" [class.selected]="currentTab == -1">
-            <octicons-gear [size]="16" class="mr-1"></octicons-gear> Settings
+            <span octicon="gear" size="16" class="mr-1"></span> Settings
         </div>
     </div>
 </nav>

@@ -14,10 +14,10 @@
 
                 <ul class="dropdown-menu dropdown-menu-se">
                     <li><a class="dropdown-item" href="#url">
-                            <octicons-note [size]="16" class="mr-1"></octicons-note>Content
+                        <span octicon="note" size="16" class="mr-1"></span>Content
                         </a></li>
                     <li><a class="dropdown-item" href="#url">
-                            <octicons-file-directory [size]="16" class="mr-1"></octicons-file-directory>Folder
+                        <span octicon="file-directory" size="16" class="mr-1"></span>Folder
                         </a></li>
                     <li><a class="dropdown-item" href="#url">Everything</a></li>
                     <li><a class="dropdown-item" href="#url">Invert Selection</a></li>
@@ -34,17 +34,19 @@
 
                 <ul class="dropdown-menu dropdown-menu-se">
                     <li><a class="dropdown-item" href="#url">
-                            <octicons-copy [size]="24" class="mr-1"></octicons-copy>Copy
+                        <span octicon="copy" size="16" class="mr-1"></span> Copy
                         </a></li>
                     <li><a class="dropdown-item" href="#url"> Move</a></li>
-                    <li><a class="dropdown-item" href="#url"> Delete</a></li>
+                    <li><a class="dropdown-item" href="#url">
+                        <span octicon="trash" size="16" class="mr-1"></span> 
+                        Delete</a></li>
                 </ul>
             </details>
         </div>
         <div>
             <details class="dropdown details-reset details-overlay d-inline-block mr-2">
                 <summary class="btn btn-sm" aria-haspopup="true">
-                    <octicons-download size="16" class="mr-1"></octicons-download>Download
+                    <span octicon="download" size="16" class="mr-1"></span>Download
                     <div class="dropdown-caret"></div>
                 </summary>
 
@@ -66,14 +68,15 @@
                         <header class="SelectMenu-header" style="padding: 5px;">
                             <div class="SelectMenu-title">
                                 <a href class="btn btn-block mb-1">
-                                    <octicons-note [size]="16" class="mr-1"></octicons-note>New Article
+                                    <span octicon="note" size="16" class="mr-1"></span> New Article
                                 </a>
                                 <a href class="btn btn-block mb-1">
-                                    <octicons-file-directory [size]="16" class="mr-1"></octicons-file-directory> New
+                                    
+                                    <span octicon="file-directory" size="16" class="mr-1"></span> New
                                     Folder
                                 </a>
                                 <a href class="btn btn-block">
-                                    <octicons-upload [size]="16" class="mr-1"></octicons-upload> Upload File
+                                    <span octicon="upload" size="16" class="mr-1"></span> Upload File
                                 </a>
                             </div>                           
                         </header>
@@ -83,13 +86,13 @@
                         </form>
                         <div class="SelectMenu-list">
                             <button class="SelectMenu-item" role="menuitem">
-                                <octicons-note [size]="16" class="mr-1"></octicons-note>Text
+                                <span octicon="note" size="16" class="mr-1"></span> Text
                             </button>
                             <button class="SelectMenu-item" role="menuitem">
-                                <octicons-note [size]="16" class="mr-1"></octicons-note>Article
+                                <span octicon="note" size="16" class="mr-1"></span> Article
                             </button>
                             <button class="SelectMenu-item" role="menuitem">
-                                <octicons-note [size]="16" class="mr-1"></octicons-note>Folder Index
+                                <span octicon="note" size="16" class="mr-1"></span> Folder Index
                             </button>
                         </div>
                     </div>
@@ -132,7 +135,7 @@
                 <span title="Label: green outline label"
                     class="Label Label--outline Label--outline-green mr-3">Published</span>
                 <button class="btn-link btn-sm mr-3" style="color: #24292e;">
-                    <octicons-history [size]="16"></octicons-history>
+                    <span octicon="history" size="16" class="mr-1"></span>
                     History
                 </button>
                 <details class="dropdown details-reset details-overlay d-inline-block mr-3">
@@ -158,13 +161,13 @@
                     <input type="checkbox" class="mr-2" />
                     <a [routerLink]="['/content/object-list', shFolder.id]" routerLinkActive="active"
                         class="d-flex flex-items-center">
-                        <octicons-file-directory size="24" class="mr-1"></octicons-file-directory>
+                        <span octicon="file-directory" size="24" class="mr-2"></span>
                         {{shFolder.name}}
                     </a>
                     <shio-object-actions [title]="shFolder.name"></shio-object-actions>
                 </div>
                 <div class="d-flex flex-items-center mt-1" style="color: rgba(27, 31, 35, 0.6);">
-                    <octicons-clock [size]="16" class="mr-1"></octicons-clock>
+                    <span octicon="clock" size="16" class="mr-1"></span>
                     <span style="font-size: smaller;"> Updated
                         {{shFolder.date | amTimeAgo}}</span>
                 </div>
@@ -181,18 +184,12 @@
                     <input type="checkbox" class="mr-2" />
                     <a [routerLink]="['/content/post', shPost.id]" routerLinkActive="active"
                         class="d-flex flex-items-center">
-                        <svg class="octicon mr-2" viewBox="0 0 24 24" width="24" height="24">
-                            <path fill-rule="evenodd"
-                                d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0122.25 21H1.75A1.75 1.75 0 010 19.25V4.75zm1.75-.25a.25.25 0 00-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 00.25-.25V4.75a.25.25 0 00-.25-.25H1.75z">
-                            </path>
-                            <path fill-rule="evenodd"
-                                d="M5 8.75A.75.75 0 015.75 8h11.5a.75.75 0 010 1.5H5.75A.75.75 0 015 8.75zm0 4a.75.75 0 01.75-.75h5.5a.75.75 0 010 1.5h-5.5a.75.75 0 01-.75-.75z">
-                            </path>
-                        </svg>{{shPost.title}}</a>
+                        <span octicon="note" size="24" class="mr-2"></span>
+                        {{shPost.title}}</a>
                     <shio-object-actions [title]="shPost.title"></shio-object-actions>
                 </div>
                 <div class="d-flex flex-items-center mt-1" style="color: rgba(27, 31, 35, 0.6);">
-                    <octicons-clock [size]="16" class="mr-1"></octicons-clock>
+                    <span octicon="clock" size="16" class="mr-1"></span>
                     <span>
                         <span style="font-size: smaller;"> Updated
                             {{shPost.date | amTimeAgo}}</span>
