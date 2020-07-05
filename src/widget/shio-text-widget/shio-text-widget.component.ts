@@ -1,5 +1,5 @@
-import { Component, Input, forwardRef } from '@angular/core';
-import { InputComponent, createCustomInputControlValueAccessor } from '../input.component';
+import { Component, forwardRef } from '@angular/core';
+import { createCustomInputControlValueAccessor } from '../input.component';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 const noop = () => {
@@ -29,7 +29,7 @@ export class ShioTextWidgetComponent implements ControlValueAccessor {
   //get accessor
   get value(): any {
     return this.innerValue;
-  };
+  }
 
   //set accessor including call the onchange callback
   set value(v: any) {
