@@ -1,9 +1,3 @@
-import 'brace';
-import 'brace/theme/eclipse';
-import 'brace/mode/text';
-import 'brace/mode/javascript';
-import 'brace/mode/html';
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';

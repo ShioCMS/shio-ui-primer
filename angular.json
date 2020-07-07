@@ -26,13 +26,21 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
+              { "glob": "worker-javascript.js", "input": "node_modules/ace-builds/src-min/", "output": "/" },
+              { "glob": "worker-html.js", "input": "node_modules/ace-builds/src-min/", "output": "/" },
+              { "glob": "worker-json.js", "input": "node_modules/ace-builds/src-min/", "output": "/" }
             ],
             "styles": [
               "node_modules/@primer/css/utilities/index.scss",
               "src/styles.scss"              
             ],
-            "scripts": ["node_modules/tinymce/tinymce.min.js"]
+            "scripts": ["node_modules/tinymce/tinymce.min.js",
+              "node_modules/ace-builds/src-min/ace.js",
+              "node_modules/ace-builds/src-min/theme-eclipse.js",
+              "node_modules/ace-builds/src-min/mode-javascript.js",
+              "node_modules/ace-builds/src-min/mode-html.js",
+              "node_modules/ace-builds/src-min/mode-json.js"]
           },
           "configurations": {
             "production": {
@@ -86,7 +94,7 @@
           "sourceLocale": "en-US",          
           "locales": {
             "en": "src/locale/messages.en.xlf",
-            "pt": "src/locale/messages.fr.xlf"
+            "pt": "src/locale/messages.pt.xlf"
           }
         },
         "test": {
@@ -99,12 +107,21 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
+              { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" },
+              { "glob": "worker-javascript.js", "input": "node_modules/ace-builds/src-min/", "output": "/" },
+              { "glob": "worker-html.js", "input": "node_modules/ace-builds/src-min/", "output": "/" },
+              { "glob": "worker-json.js", "input": "node_modules/ace-builds/src-min/", "output": "/" }
             ],
             "styles": [             
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/tinymce/tinymce.min.js"]
+            "scripts": ["node_modules/tinymce/tinymce.min.js",
+              "node_modules/ace-builds/src-min/ace.js",
+              "node_modules/ace-builds/src-min/theme-eclipse.js",
+              "node_modules/ace-builds/src-min/mode-javascript.js",
+              "node_modules/ace-builds/src-min/mode-html.js",
+              "node_modules/ace-builds/src-min/mode-json.js"
+            ]
           }
         },
         "lint": {

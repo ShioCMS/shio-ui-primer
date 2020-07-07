@@ -6,14 +6,12 @@ import { ShioRepositoryTabsComponent } from './component/shio-repository-tabs/sh
 import { ShSiteService } from './service/site/site.service';
 import { ShioSitePageComponent } from './component/shio-site-page/shio-site-page.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
+import { AceEditorModule } from 'ng2-ace-editor';
 import { ShioRepositoryRoutingModule } from './shio-repository-routing.module';
 import { ShioCommonsModule } from 'src/commons/shio-commons.module';
 import { OcticonsModule } from 'ngx-octicons';
 import { ShHistoryService } from 'src/history/service/history.service';
-const DEFAULT_ACE_CONFIG: AceConfigInterface = {
-  tabSize: 2
-};
+
 @NgModule({
   declarations: [
     ShioRepositoryAboutComponent,
@@ -25,7 +23,7 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    AceModule,
+    AceEditorModule,
     OcticonsModule,    
     ShioRepositoryRoutingModule,
     ShioCommonsModule
@@ -37,8 +35,7 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   ],
   providers: [
     ShSiteService,
-    ShHistoryService,
-    { provide: ACE_CONFIG, useValue: DEFAULT_ACE_CONFIG }
+    ShHistoryService
   ]
 })
 export class ShioRepositoryModule { }

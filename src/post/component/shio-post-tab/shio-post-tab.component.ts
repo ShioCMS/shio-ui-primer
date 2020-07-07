@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ShPost } from 'src/post/model/post.model';
 import { ShPostAttr } from 'src/post/model/postAttr.model';
-import { AceConfigInterface } from 'ngx-ace-wrapper';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
@@ -13,11 +12,6 @@ export class ShioPostTabComponent implements OnInit {
   @Input() tabIndex: number;
   @Input() currentTab: number;
 
-  public aceConfig: AceConfigInterface = {
-    showGutter: true,
-    theme: 'eclipse',
-    readOnly: false
-  };
   public chkEditor = ClassicEditor;
   public tinyMCEConfig = {
 

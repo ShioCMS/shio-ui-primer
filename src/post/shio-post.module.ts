@@ -7,14 +7,12 @@ import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs
 import { ShPostService } from './service/post.service';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { AceModule, AceConfigInterface, ACE_CONFIG } from 'ngx-ace-wrapper';
+import { AceEditorModule } from 'ng2-ace-editor';
 import { ShioPostRoutingModule } from './shio-post-routing.module';
 import { ShioCommonsModule } from 'src/commons/shio-commons.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ShioWidgetModule } from 'src/widget/shio-widget.module';
-const DEFAULT_ACE_CONFIG: AceConfigInterface = {
-  tabSize: 2
-};
+
 @NgModule({
   declarations: [
     ShioPostPageComponent,
@@ -27,7 +25,7 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    AceModule,
+    AceEditorModule,
     EditorModule,
     CKEditorModule,
     ShioCommonsModule,
@@ -36,7 +34,6 @@ const DEFAULT_ACE_CONFIG: AceConfigInterface = {
   ],
   providers: [
     ShPostService,
-    { provide: ACE_CONFIG, useValue: DEFAULT_ACE_CONFIG },
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ],
 })
