@@ -3,7 +3,6 @@
     <div style="background-color: whitesmoke;width: 32px;height: 32px;border-radius: 50%;"
         class="float-left">
         <svg width="32" height="32" style="border-radius: 50%;" [identiconHash]="shPost.shSite.name | lowercase">
-            Avatar
         </svg>
     </div>
     <div class=" overflow-hidden flex-auto" style="font-size: larger;font-weight: 500;">
@@ -12,12 +11,12 @@
             <ol class="ml-2">
                 <li class="breadcrumb-item" [attr.aria-current]="breadcrumb.breadcrumb == null ? 'page' : null">
                     <a *ngIf="breadcrumb.breadcrumb != null"
-                        [routerLink]="['/content/object-list', shPost.shSite.id]">{{shPost.shSite.name}}
+                        [routerLink]="['/content/object/list', shPost.shSite.id]">{{shPost.shSite.name}}
                     </a>
                     <span *ngIf="breadcrumb.breadcrumb == null">{{shPost.shSite.name}}</span>
                 </li>
                 <li *ngFor="let breadcrumbItem of breadcrumb.breadcrumb;" class="breadcrumb-item"><a
-                        [routerLink]="['/content/object-list', breadcrumbItem.id]">{{breadcrumbItem.name}}</a>
+                        [routerLink]="['/content/object/list', breadcrumbItem.id]">{{breadcrumbItem.name}}</a>
                 </li>
                 <li class="breadcrumb-item" aria-current>
                     {{shPost.title}}
