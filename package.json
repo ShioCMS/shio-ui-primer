@@ -43,7 +43,7 @@
     "ngx-moment": "^5.0.0",
     "ngx-octicons": "^0.1.1",
     "ngx-smart-modal": "^7.4.1",
-    "rxjs": "~6.6.0",
+    "rxjs": "~6.6.2",
     "tinymce": "^5.4.1",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
