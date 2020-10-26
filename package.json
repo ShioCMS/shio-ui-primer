@@ -31,7 +31,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@primer/css": "^15.2.0",
-    "@primer/octicons": "^10.0.0",
+    "@primer/octicons": "^11.0.0",
     "@tinymce/tinymce-angular": "^4.1.0",
     "ace-builds": "1.4.12",
     "angular-notifier": "^6.0.1",
