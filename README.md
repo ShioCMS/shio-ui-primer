@@ -49,18 +49,18 @@ $ ./gradlew bootrun
 
 ### 3. Runtime
 
-Use Ng to execute Shio CMS UI Primer.
+Use ng to execute Shio CMS UI Primer.
 
 ```shell
-$ ng serve --open
+$ npx ng serve --open
 ```
 
 ### 4. Build
 
-Use Ng to build Shio CMS UI Primer.
+Use ng to build Shio CMS UI Primer.
 
 ```shell
-$ ng build --prod
+$ npx ng build --prod
 ```
 
 ## URL
