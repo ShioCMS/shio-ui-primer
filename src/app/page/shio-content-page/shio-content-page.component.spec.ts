@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ShioContentPageComponent } from './shio-content-page.component';
 
@@ -6,7 +6,7 @@ describe('ShioContentPageComponent', () => {
   let component: ShioContentPageComponent;
   let fixture: ComponentFixture<ShioContentPageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ShioContentPageComponent ]
     })

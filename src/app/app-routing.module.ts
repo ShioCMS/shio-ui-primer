@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/content/dashboard/repo', pathMatch: 'full', canActivate: [AuthGuard] }
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
