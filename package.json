@@ -26,7 +26,7 @@
     "@angular/router": "^11.0.2",
     "@ckeditor/ckeditor5-angular": "^1.2.3",
     "@ckeditor/ckeditor5-build-classic": "^23.1.0",
-    "@fortawesome/angular-fontawesome": "^0.7.0",
+    "@fortawesome/angular-fontawesome": "^0.8.0",
     "@fortawesome/fontawesome-common-types": "^0.2.32",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
