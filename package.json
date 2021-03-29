@@ -29,7 +29,7 @@
     "@fortawesome/angular-fontawesome": "^0.8.1",
     "@fortawesome/fontawesome-common-types": "^0.2.34",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@primer/css": "^15.2.0",
     "@primer/octicons": "^12.1.0",
     "@tinymce/tinymce-angular": "^4.2.0",
