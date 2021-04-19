@@ -18,10 +18,10 @@ const routes: Routes = [
       { path: 'post', loadChildren: () => import('../post/shio-post.module').then(m => m.ShioPostModule) },
       { path: 'object', loadChildren: () => import('../object/shio-object.module').then(m => m.ShioObjectModule) },
       { path: 'repo', loadChildren: () => import('../repository/shio-repository.module').then(m => m.ShioRepositoryModule) },
-      { path: '', redirectTo: '/content/dashboard/repo', pathMatch: 'full', canActivate: [AuthGuard] }
+      { path: '', redirectTo: '/content/dashboard/repo', pathMatch: 'full' }
     ]
   },
-  { path: '', redirectTo: '/content/dashboard/repo', pathMatch: 'full', canActivate: [AuthGuard] }
+  { path: '', redirectTo: '/content/dashboard/repo', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' })],
