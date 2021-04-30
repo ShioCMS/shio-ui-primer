@@ -7,7 +7,7 @@ import { ShioPostTabsComponent } from './component/shio-post-tabs/shio-post-tabs
 import { ShPostService } from './service/post.service';
 import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { AceEditorModule } from 'ng2-ace-editor';
+import { AceEditorModule } from 'ace-editor-ng9';
 import { ShioPostRoutingModule } from './shio-post-routing.module';
 import { ShioCommonsModule } from 'src/commons/shio-commons.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';

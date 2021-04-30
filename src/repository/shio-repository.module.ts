@@ -6,7 +6,7 @@ import { ShioRepositoryTabsComponent } from './component/shio-repository-tabs/sh
 import { ShSiteService } from './service/site/site.service';
 import { ShioSitePageComponent } from './component/shio-site-page/shio-site-page.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AceEditorModule } from 'ng2-ace-editor';
+import { AceEditorModule } from 'ace-editor-ng9';
 import { ShioRepositoryRoutingModule } from './shio-repository-routing.module';
 import { ShioCommonsModule } from 'src/commons/shio-commons.module';
 import { OcticonsModule } from 'ngx-octicons';
